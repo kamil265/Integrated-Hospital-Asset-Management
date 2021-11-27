@@ -456,18 +456,3 @@
             </div>
         </div>
     </div>
-    
-<script>
-    // function uidDokter()
-    // {
-    //     uid_dokter = $('.valueUIDdokter').html();
-    //     $("#uid_dokter").val(uid_dokter);
-    //     $("#formAddDokter").submit();
-    // }
-    // function uidPerawat()
-    // {
-    //     uid_perawat = $('.valueUIDperawat').html();
-    //     $("#uid_perawat").val(uid_perawat);
-    //     $("#formAddPerawat").submit();
-    // }
-</script>

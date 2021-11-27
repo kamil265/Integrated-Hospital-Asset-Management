@@ -358,7 +358,7 @@
                                     <td>
 										<div class="d-flex">
                                             <a href="#" id="<?php echo htmlentities ($result->jadwalid); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditjadwalperawat" ><i class="fa fa-pencil" ></i></a>
-											<a href="deleteJadwalperawat.php?id=<?php echo htmlentities($result->jadwalid);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
+											<a href="deleteJadwal.php?id=<?php echo htmlentities($result->jadwalid);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
 										</div>												
 									</td>
                                     								

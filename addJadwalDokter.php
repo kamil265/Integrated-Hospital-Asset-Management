@@ -11,7 +11,7 @@
         if(isset($_POST['tambahJadwal']))
         {
             $uidDokter=$_POST['uid_jadwaldok'];
-            $hariPraktik=$_POST['hari_praktik'];
+            $hariPraktik=$_POST['tanggal_praktik'];
             $jamMulai=$_POST['jam_mulai'];
             $jamSelesai=$_POST['jam_selesai'];
             $sql="INSERT INTO  tb_jadwaldokter (dokter_id,hari_praktik,jam_mulai,jam_selesai) VALUES(:uidDokter,:hariPraktik,:jamMulai,:jamSelesai)";

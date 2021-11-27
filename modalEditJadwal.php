@@ -48,6 +48,12 @@
                                     </select>
                                 </div>
 							</div> -->
+                            <div class="col-12">
+								<div class="form-group">
+                                	<label>Tanggal Praktik</label>
+                                    <input type="date" name="tanggal_praktik" class="form-control" value="<?php echo htmlentities($result->hari_praktik);?>">>
+                                </div>
+							</div>
 							<div class="col-lg-6 mb-4">
                                 <label>Jam Mulai Praktik</label>
                                 <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">

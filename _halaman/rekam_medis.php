@@ -105,7 +105,8 @@
                                             <th>TB</th>
                                             <th>BB</th>
                                             <th>Hasil Diagnosa</th>
-                                            <th></th>
+                                            <th>Detail Pemeriksaan</th>
+                                            <th> </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -130,7 +131,8 @@
                                             <td><?php echo htmlentities($result->gol_darah);?></td> 
                                             <td><?php echo htmlentities($result->tb);?></td> 
                                             <td><?php echo htmlentities($result->bb);?></td>
-                                            <td><?php echo htmlentities($result->hasil_diagnosa);?></td> 
+                                            <td><?php echo htmlentities($result->hasil_diagnosa);?></td>
+                                            <td><a href="#" id="<?php echo htmlentities ($result->id); ?>" class="openmodaleditrekambayi" ><span class="badge rounded-pill bg-info text-white">Detail Pemeriksaan</span></a></td>
                                             <td>
                                                 <a href="#" id="<?php echo htmlentities ($result->id); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditrekambayi" ><i class="fa fa-pencil" ></i></a>                                                
                                                 <a href="deletepasienbayi_rekammedis.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
@@ -160,6 +162,7 @@
                                             <th>TB</th>
                                             <th>BB</th>
                                             <th>Hasil Diagnosa</th>
+                                            <th>Detail Pemeriksaan</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -185,7 +188,8 @@
                                             <td><?php echo htmlentities($result->gol_darah);?></td> 
                                             <td><?php echo htmlentities($result->tb);?></td> 
                                             <td><?php echo htmlentities($result->bb);?></td>
-                                            <td><?php echo htmlentities($result->hasil_diagnosa);?></td> 
+                                            <td><?php echo htmlentities($result->hasil_diagnosa);?></td>
+                                            <td><a href="#" id="<?php echo htmlentities ($result->id); ?>" class="openmodaleditrekamanak" ><span class="badge rounded-pill bg-info text-white">Detail Pemeriksaan</span></a></td> 
                                             <td>                                                                                     
                                             <a href="#" id="<?php echo htmlentities ($result->id); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditrekamanak" ><i class="fa fa-pencil" ></i></a>                                                
                                             <a href="deletepasienanak_rekammedis.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
@@ -241,7 +245,8 @@
                                             <td><?php echo htmlentities($result->gol_darah);?></td> 
                                             <td><?php echo htmlentities($result->tb);?></td> 
                                             <td><?php echo htmlentities($result->bb);?></td>
-                                            <td><?php echo htmlentities($result->hasil_diagnosa);?></td> 
+                                            <td><?php echo htmlentities($result->hasil_diagnosa);?></td>
+                                            <td><a href="#" id="<?php echo htmlentities ($result->id); ?>" class="openmodaleditrekamdewasa" ><span class="badge rounded-pill bg-info text-white">Detail Pemeriksaan</span></a></td>  
                                             <td>                                                                                                
                                                 <a href="#" id="<?php echo htmlentities ($result->id); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditrekamdewasa" ><i class="fa fa-pencil" ></i></a>                                                
                                                 <a href="deletepasiendewasa_rekammedis.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>

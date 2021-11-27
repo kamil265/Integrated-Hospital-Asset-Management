@@ -35,7 +35,7 @@ include 'connect.php';
                         <div class="col-lg-15">
                             <label class="text-label">KATEGORI PASIEN</label>
                             <select class="form-control" name="clcpaskategori">
-                                <option>Pilih Jenis Pasien</option>
+                            <option ><?php echo htmlentities($result->kategori_pasien);?></option>
                                 <option>Dewasa</option>
                                 <option>Anak</option>
                                 <option>Bayi</option>

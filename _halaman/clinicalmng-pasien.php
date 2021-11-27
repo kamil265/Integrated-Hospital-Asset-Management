@@ -31,8 +31,8 @@ include 'connect.php';
                         <Input type="text" name="clcpasnama" class="form-control" required>
                     </div>
                     </div>
-                    <div class="form-group ">
-                        <div class="col-lg-15">
+                    <div class="col-lg-15">
+                        <div class="form-group">
                             <label class="text-label">KATEGORI PASIEN</label>
                             <select class="form-control" name="clcpaskategori">
                             <option ><?php echo htmlentities($result->kategori_pasien);?></option>
@@ -55,10 +55,15 @@ include 'connect.php';
                     </div>
                     </div>
                     <div class="col-lg-15">
-                    <div class="form-group">
-                        <label class="text-label"> STATUS </label>
-                        <Input type="text" name="clcpasstatus" class="form-control">
-                    </div>
+                        <div class="form-group">
+                            <label class="text-label">STATUS</label>
+                            <select class="form-control" name="clcpasstatus">
+                            <option ><?php echo htmlentities($result->status_pasien);?></option>
+                                <option>Status 1</option>
+                                <option>Status 2</option>
+                                <option>Status 3</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-lg-15">
                     <div class="form-group">

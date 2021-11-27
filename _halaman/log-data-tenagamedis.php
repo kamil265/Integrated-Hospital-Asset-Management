@@ -6,7 +6,7 @@ include 'connect.php';
         <div class="col-xl-12 col-lg-12 col-xxl-12 col-sm-12">
             <div class="card" id="log-data-nakes">
             <div class="card-header">
-                <h4 class="card-title">Daftar Tenaga Kesehatan</h4>
+                <h4 class="card-title">Log Data Tenaga Medis</h4>
             </div>
             <div class="card-body">
                 <div class="default-tab">
@@ -60,12 +60,7 @@ include 'connect.php';
                                                             <td><?php echo htmlentities($result->alamat_dokter);?></td>
                                                             <td><?php echo htmlentities($result->kontak_dokter);?></td>
                                                             <td><?php echo htmlentities($result->spesialis);?></td>
-                                                            <td>
-										                        <div class="d-flex">
-											                        <a href="#" id="<?php echo htmlentities ($result->id); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditdokter" ><i class="fa fa-pencil" ></i></a>
-											                        <a href="deleteDaftarDokter.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
-										                        </div>												
-									                        </td>	
+        
                                                         </tr>
 
                                                     <?php $cnt++;}} ?>  
@@ -112,12 +107,7 @@ include 'connect.php';
                                                 <td><?php echo htmlentities($result->jenis_kelamin);?></td>
                                                 <td><?php echo htmlentities($result->alamat);?></td>
                                                 <td><?php echo htmlentities($result->kontak_perawat);?></td>
-                                                <td>
-										            <div class="d-flex">
-											            <a href="#" id="<?php echo htmlentities ($result->id); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditperawat" ><i class="fa fa-pencil" ></i></a>
-											            <a href="deleteDaftarPerawat.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
-										            </div>												
-									            </td>	
+                                                
                                             </tr>
 
                                             <?php $cnt++;}} ?>  
@@ -166,13 +156,7 @@ include 'connect.php';
                                                 <td><?php echo htmlentities($result->alamat_karyawan);?></td>
                                                 <td><?php echo htmlentities($result->divisi_karyawan);?></td>
                                                 <td><?php echo htmlentities($result->kontak_karyawan);?></td>
-                                                <td>
-										            <div class="d-flex">
-											            <a href="#" id="<?php echo htmlentities ($result->id); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditkaryawan" ><i class="fa fa-pencil" ></i></a>
-											            <a href="deleteDaftarKaryawan.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
-										            </div>												
-									            </td>	
-
+                                                
                                             <?php $cnt++;}} ?>  
 
                                         </tbody>

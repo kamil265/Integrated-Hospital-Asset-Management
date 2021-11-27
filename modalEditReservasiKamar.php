@@ -27,7 +27,7 @@
                         <div class="row">
                         	<div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">UID Pasien</label>
+                                    <label class="text-label">UID PASIEN</label>
                                     <input type="text" name="uid_reservasikamar" id="uid_reservasikamar" disabled value="<?php echo htmlentities($result->pasien_id);?>" class="form-control" required>
                                 </div>
 								<div class="form-group">
@@ -48,22 +48,46 @@
                                     </select>
                                 </div>
 							</div> -->
-                        	<div class="col-lg-12 mb-2">
-                                <div class="form-group">
-                                    <label class="text-label">Jenis Kamar</label>
-                                    <input type="text" name="jenis_kamar" id="jenis_kamar" disabled value="<?php echo htmlentities($result->jenis_kamar);?>" class="form-control" required>
-                                </div>
-								<div class="form-group">
-                                    <span id="get_data_reservasikamar" style="font-size:16px;"></span> 
+                            <div class="col-lg-12 mb-2">
+                                <div class="form-group ">
+                                    <label class="text-label">JENIS KAMAR</label>
+                                    <select class="form-control" name="jenis_kamar" id="jenis_kamar" value="<?php echo htmlentities($result->jenis_kamar);?>" class="form-control" required>
+                                        <option>Jenis 1</option>
+                                        <option>Jenis 2</option>
+                                        <option>Jenis 3</option>
+                                        <option>Jenis 4</option>
+                                        <option>Jenis 5</option>
+										<option>Jenis 6</option>
+                                        <option>Jenis 7</option>
+                                    </select>
                                 </div>
                             </div>
-                        	<div class="col-lg-12 mb-2">
-                                <div class="form-group">
-                                    <label class="text-label">Kelas Kamar</label>
-                                    <input type="text" name="kelas_kamar" id="kelas_kamar" disabled value="<?php echo htmlentities($result->kelas_kamar);?>" class="form-control" required>
+                            <div class="col-lg-12 mb-2">
+                                <div class="form-group ">
+                                    <label class="text-label">KELAS KAMAR</label>
+                                    <select class="form-control" name="kelas_kamar" id="kelas_kamar" value="<?php echo htmlentities($result->kelas_kamar);?>" class="form-control" required>
+                                        <option>Kelas 1</option>
+                                        <option>Kelas 2</option>
+                                        <option>Kelas 3</option>
+                                        <option>Kelas 4</option>
+                                        <option>Kelas 5</option>
+										<option>Kelas 6</option>
+                                        <option>Kelas 7</option>
+                                    </select>
                                 </div>
-								<div class="form-group">
-                                    <span id="get_data_reservasikamar" style="font-size:16px;"></span> 
+                            </div>
+                            <div class="col-lg-12 mb-2">
+                                <div class="form-group ">
+                                    <label class="text-label">RUANG</label>
+                                    <select class="form-control" name="ruang" id="ruang" value="<?php echo htmlentities($result->ruang);?>" class="form-control" required>
+                                        <option>Ruang 1</option>
+                                        <option>Ruang 2</option>
+                                        <option>Ruang 3</option>
+                                        <option>Ruang 4</option>
+                                        <option>Ruang 5</option>
+										<option>Ruang 6</option>
+                                        <option>Ruang 7</option>
+                                    </select>
                                 </div>
                             </div>
                     </section>

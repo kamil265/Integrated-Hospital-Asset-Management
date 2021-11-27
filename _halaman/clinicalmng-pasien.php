@@ -467,7 +467,7 @@ include 'connect.php';
                                     <td><?php echo htmlentities($result->ruang);?></td>
                                     <td>
 										<div class="d-flex">
-                                            <a href="#" id="<?php echo htmlentities ($result->jadwalid); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditjadwalreservasikamar" ><i class="fa fa-pencil" ></i></a>
+                                            <a href="#" id="<?php echo htmlentities ($result->jadwalid); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditreservasikamar" ><i class="fa fa-pencil" ></i></a>
 											<a href="deleteReservasiKamar.php?id=<?php echo htmlentities($result->jadwalid);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
 										</div>												
 									</td>

@@ -60,16 +60,6 @@
                                 <label>Tanggal Lahir*</label>
                                 <input type="text" name="tanggalLahir" class="form-control" id="mdate" required>
                             </div>
-                            <div class="col-lg-12 mb-2">
-                                <div class="form-group ">
-                                    <label class="text-label">Jenis Kelamin</label>
-                                    <select class="form-control" name="jk_pasien">
-                                        <option>Pilih Jenis Kelamin Pasien</option>
-                                        <option>Pria</option>
-                                        <option>Wanita</option>
-                                    </select>
-                                </div>
-                            </div>
                             <div class="col-lg-12 mb-3">
                                 <div class="form-group">
                                     <label class="text-label">Alamat*</label>
@@ -466,18 +456,3 @@
             </div>
         </div>
     </div>
-    
-<script>
-    // function uidDokter()
-    // {
-    //     uid_dokter = $('.valueUIDdokter').html();
-    //     $("#uid_dokter").val(uid_dokter);
-    //     $("#formAddDokter").submit();
-    // }
-    // function uidPerawat()
-    // {
-    //     uid_perawat = $('.valueUIDperawat').html();
-    //     $("#uid_perawat").val(uid_perawat);
-    //     $("#formAddPerawat").submit();
-    // }
-</script>

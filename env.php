@@ -16,7 +16,7 @@ $img='img/';
 $_SESSION['prefix']='RS';
 
 //URI
-$setUri['base']='http://localhost/RS/';
+$setUri['base']='http://localhost/integrated-hospital-asset-management/';
 $setUri['assets']='assets/';
 
 // $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 

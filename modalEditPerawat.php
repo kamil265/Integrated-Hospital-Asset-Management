@@ -57,7 +57,6 @@
                                     <label class="text-label">Jenis Kelamin</label>
                                     <select class="form-control" name="perawat_jk">
                                     <option ><?php echo htmlentities($result->jenis_kelamin);?></option>
-                                        <option>Pilih Jenis Kelamin</option>
                                         <option>Pria</option>
                                         <option>Wanita</option>
                                     </select>

@@ -50,6 +50,7 @@
                                 <div class="form-group ">
                                     <label class="text-label">Jenis Kelamin</label>
                                     <select class="form-control" name="karyawan_jk">
+                                    <option ><?php echo htmlentities($result->jenis_kelamin_karyawan);?></option>
                                         <option>Pilih Jenis Kelamin</option>
                                         <option>Pria</option>
                                         <option>Wanita</option>

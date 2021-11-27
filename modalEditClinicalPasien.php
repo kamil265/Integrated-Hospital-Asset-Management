@@ -42,10 +42,14 @@
                                 </div>
                             </div>
                             <div class="col-lg-12 mb-2">
-                              <div class="form-group">
-                                <label>KATEGORI PASIEN</label>
-                                <input type="text" name="clckategori" class="form-control" value="<?php echo htmlentities($result->jenis_pasien);?>" class="form-control" required>
-                             </div>
+                                <div class="form-group ">
+                                    <label class="text-label">KATEGORI PASIEN</label>
+                                    <select class="form-control" name="clckategori" value="<?php echo htmlentities($result->jenis_pasien);?>" class="form-control" required>
+                                        <option>Dewasa</option>
+                                        <option>Anak</option>
+                                        <option>Bayi</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-lg-12 mb-3">
                                 <div class="form-group">

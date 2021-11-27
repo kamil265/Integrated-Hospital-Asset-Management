@@ -3,91 +3,183 @@ include 'connect.php';
  $title="Log Data Tenaga Medis";
 ?>
 <div class="container-fluid">
-    <div class="col-12">
-        <div class="card">
+        <div class="col-xl-12 col-lg-12 col-xxl-12 col-sm-12">
+            <div class="card" id="log-data-nakes">
             <div class="card-header">
-                <h4 class="card-title">Log Data Tenaga Medis</h4>
+                <h4 class="card-title">Daftar Tenaga Kesehatan</h4>
             </div>
             <div class="card-body">
-                <div class="table-responsive">
-                    <table id="example5" class="display" style="min-width: 845px">
-                        <thead>
-                            <tr>
-                                <th>
-									<div class="custom-control custom-checkbox">
-										<input type="checkbox" class="custom-control-input" id="checkAll" required="">
-										<label class="custom-control-label" for="checkAll"></label>
-									</div>
-								</th>
-                                <th>TANGGAL MASUK</th>
-                                <th>UID</th>
-                                <th>NAMA TENAGA KESEHATAN</th>
-                                <th>TANGGAL LAHIR</th>
-                                <th>NIK</th>
-                                <th>JENIS KELAMIN</th>
-                                <th>ALAMAT</th>                                                              
-                                <th>DIVISI</th>                                
-                                <th>KONTAK</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php 
-								$sql = "SELECT*FROM tb_logdata_tenagamedis";
-								$query = $dbh -> prepare($sql);
-								$query->execute();
-								$results=$query->fetchAll(PDO::FETCH_OBJ);
-								$cnt=1;
-								if($query->rowCount() > 0)
-								{
-									foreach($results as $result)
+                <div class="default-tab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#home"><i class="la la-user-md mr-2"></i> Dokter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#profile"><i class="la la-user-nurse mr-2"></i> Perawat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#contact"><i class="la la-id-card-alt mr-2"></i> Karyawan</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel">
+                            <div class="pt-4">
+                            <div class="table-responsive">
+                                            <table class="table table-responsive-md">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:80px;" ><strong>No</strong></th>
+                                                            <th><strong>RFID UID</strong></th>                                                
+                                                            <th><strong>NAMA DOKTER</strong></th>
+                                                            <th><strong>NIK DOKTER</strong></th>
+                                                            <th><strong>JENIS KELAMIN</strong></th>
+                                                            <th><strong>ALAMAT</strong></th>
+                                                            <th><strong>KONTAK</strong></th>
+                                                            <th><strong>SPESIALIS</strong></th>                                                 
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php 
+									                    $sql = "SELECT * from  tb_dokter WHERE status=0";
+									                    $row = $dbh -> prepare($sql);
+									                    $row->execute();
+									                    $results=$row->fetchAll(PDO::FETCH_OBJ);
+									                    $cnt=1;
+									                    if($row->rowCount() > 0)
+									                    {
+										                    foreach($results as $result)
+									                        {               
+								                    ?>
+
+                                                        <tr>
+                                                            <td><?php echo $cnt;?></td>                                                
+                                                            <td><?php echo htmlentities($result->rfid_uid);?></td>                                                
+                                                            <td><?php echo htmlentities($result->nama_dokter);?></td>
+                                                            <td><?php echo htmlentities($result->nik_dokter);?></td>
+                                                            <td><?php echo htmlentities($result->jenis_kelamin_dokter);?></td>
+                                                            <td><?php echo htmlentities($result->alamat_dokter);?></td>
+                                                            <td><?php echo htmlentities($result->kontak_dokter);?></td>
+                                                            <td><?php echo htmlentities($result->spesialis);?></td>
+                                                            <td>
+										                        <div class="d-flex">
+											                        <a href="#" id="<?php echo htmlentities ($result->id); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditdokter" ><i class="fa fa-pencil" ></i></a>
+											                        <a href="deleteDaftarDokter.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
+										                        </div>												
+									                        </td>	
+                                                        </tr>
+
+                                                    <?php $cnt++;}} ?>  
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                            </div>
+                        </div>
+                    <div class="tab-pane fade" id="profile">
+                        <div class="pt-4">
+                        <div class="table-responsive">
+                                    <table class="table table-responsive-md">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:80px;" ><strong>No</strong></th>
+                                                <th><strong>RFID UID</strong></th>
+                                                <th><strong>NAMA PERAWAT</strong></th>
+                                                <th><strong>NIK</strong></th>
+                                                <th><strong>JENIS KELAMIN</strong></th>
+                                                <th><strong>ALAMAT</strong></th>
+                                                <th><strong>KONTAK</strong></th>
+                                            <th></th>   
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php 
+									$sql = "SELECT * from  tb_perawat WHERE status=0";
+									$row = $dbh -> prepare($sql);
+									$row->execute();
+									$results=$row->fetchAll(PDO::FETCH_OBJ);
+									$cnt=1;
+									if($row->rowCount() > 0)
+									{
+										foreach($results as $result)
 									{               
-						    ?>  
-                            <tr>
-                                <td>
-									<div class="custom-control custom-checkbox ml-2">
-										<input type="checkbox" class="custom-control-input" id="customCheckBox2" required="">
-										<label class="custom-control-label" for="customCheckBox2"></label>
-                                    </div>
-								</td>
-                                <td><?php echo htmlentities($result->tanggal_masuk);?></td>    	
-                                <td><?php echo htmlentities($result->rfid_uid);?></td>                            
-                                <td><?php echo htmlentities($result->nama_tenaga_kesehatan);?></td>                            
-                                <td><?php echo htmlentities($result->tanggal_lahir);?></td>                         
-                                <td><?php echo htmlentities($result->nik);?></td>
-                                <td><?php echo htmlentities($result->jenis_kelamin);?></td>     
-                                <td><?php echo htmlentities($result->alamat);?></td>                                                                        
-                                <td><?php echo htmlentities($result->divisi);?></td>                                 
-                                <td><?php echo htmlentities($result->kontak);?></td>                            
-                        <?php
-                            }}
-                        ?>
-                           
-                            
-                   
-                           
-								<!-- <td>
-									<span class="badge light badge-danger">
-										<i class="fa fa-circle text-danger mr-1"></i>
-										Pasien Baru
-									</span>
-								</td> -->
-                                <td>
-					    			<div class="dropdown ml-auto text-right">
-						    			<div class="btn-link" data-toggle="dropdown">
-							    			<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-										</div>
-										<div class="dropdown-menu dropdown-menu-right">
-											<a class="dropdown-item" href="#">Accept Patient</a>
-												<a class="dropdown-item" href="#">Reject Order</a>
-								    			<a class="dropdown-item" href="#">View Details</a>
-										</div>
-									</div>
-								</td>												
-                            </tr>                    
-                        </tbody>
-                    </table>
+								?>
+
+                                            <tr>
+                                                <td><?php echo $cnt;?></td>
+                                                <td><?php echo htmlentities($result->rfid_uid);?></td>
+                                                <td><?php echo htmlentities($result->nama_perawat);?></td>
+                                                <td><?php echo htmlentities($result->nik_perawat);?></td>
+                                                <td><?php echo htmlentities($result->jenis_kelamin);?></td>
+                                                <td><?php echo htmlentities($result->alamat);?></td>
+                                                <td><?php echo htmlentities($result->kontak_perawat);?></td>
+                                                <td>
+										            <div class="d-flex">
+											            <a href="#" id="<?php echo htmlentities ($result->id); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditperawat" ><i class="fa fa-pencil" ></i></a>
+											            <a href="deleteDaftarPerawat.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
+										            </div>												
+									            </td>	
+                                            </tr>
+
+                                            <?php $cnt++;}} ?>  
+
+                                        </tbody>
+                                    </table>
+                                </div>     
+                        </div>
+                        </div>
+                    <div class="tab-pane fade" id="contact">
+                        <div class="pt-4">
+                            <div class="table-responsive">
+                                    <table class="table table-responsive-md">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:80px;" ><strong>NO</strong></th>
+                                                <th><strong>RFID UID</strong></th>
+                                                <th><strong>NAMA KARYAWAN</strong></th>
+                                                <th><strong>NIK</strong></th>
+                                                <th><strong>JENIS KELAMIN</strong></th>
+                                                <th><strong>ALAMAT</strong></th>
+                                                <th><strong>DIVISI</strong></th>
+                                                <th><strong>KONTAK</strong></th>
+                                                <th></th>  
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php 
+									$sql = "SELECT * from  tb_karyawan WHERE status=0";
+									$row = $dbh -> prepare($sql);
+									$row->execute();
+									$results=$row->fetchAll(PDO::FETCH_OBJ);
+									$cnt=1;
+									if($row->rowCount() > 0)
+									{
+										foreach($results as $result)
+									{               
+								?>
+
+                                            <tr>
+                                                <td><?php echo $cnt;?></td>
+                                                <td><?php echo htmlentities($result->kode_rfid);?></td>
+                                                <td><?php echo htmlentities($result->nama_karyawan);?></td>
+                                                <td><?php echo htmlentities($result->nik_karyawan);?></td>
+                                                <td><?php echo htmlentities($result->jenis_kelamin_karyawan);?></td>
+                                                <td><?php echo htmlentities($result->alamat_karyawan);?></td>
+                                                <td><?php echo htmlentities($result->divisi_karyawan);?></td>
+                                                <td><?php echo htmlentities($result->kontak_karyawan);?></td>
+                                                <td>
+										            <div class="d-flex">
+											            <a href="#" id="<?php echo htmlentities ($result->id); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditkaryawan" ><i class="fa fa-pencil" ></i></a>
+											            <a href="deleteDaftarKaryawan.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
+										            </div>												
+									            </td>	
+
+                                            <?php $cnt++;}} ?>  
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                        </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>

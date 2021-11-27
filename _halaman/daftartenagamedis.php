@@ -21,7 +21,7 @@
                         <div class="media-body">
                             <p class="mb-1">DOKTER</p>
                             <?php 
-                                $sql ="SELECT id from tb_dokter  ";
+                                $sql ="SELECT id from tb_dokter WHERE status=1 ";
                                 $query = $dbh -> prepare($sql);
                                 $query->execute();
                                 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -44,7 +44,7 @@
                         <div class="media-body">
                             <p class="mb-1">PERAWAT</p>
                             <?php 
-                                $sql ="SELECT id from tb_perawat";
+                                $sql ="SELECT id from tb_perawat WHERE status=1";
                                 $query = $dbh -> prepare($sql);
                                 $query->execute();
                                 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -67,7 +67,7 @@
                         <div class="media-body">
                             <p class="mb-1">KARYAWAN</p>
                             <?php 
-                                $sql ="SELECT id from tb_karyawan";
+                                $sql ="SELECT id from tb_karyawan WHERE status=1";
                                 $query = $dbh -> prepare($sql);
                                 $query->execute();
                                 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -118,7 +118,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <?php 
-									                    $sql = "SELECT * from  tb_dokter";
+									                    $sql = "SELECT * from  tb_dokter WHERE status=1";
 									                    $row = $dbh -> prepare($sql);
 									                    $row->execute();
 									                    $results=$row->fetchAll(PDO::FETCH_OBJ);
@@ -171,7 +171,7 @@
                                         </thead>
                                         <tbody>
                                         <?php 
-									$sql = "SELECT * from  tb_perawat";
+									$sql = "SELECT * from  tb_perawat WHERE status=1";
 									$row = $dbh -> prepare($sql);
 									$row->execute();
 									$results=$row->fetchAll(PDO::FETCH_OBJ);
@@ -224,7 +224,7 @@
                                         </thead>
                                         <tbody>
                                         <?php 
-									$sql = "SELECT * from  tb_karyawan";
+									$sql = "SELECT * from  tb_karyawan WHERE status=1";
 									$row = $dbh -> prepare($sql);
 									$row->execute();
 									$results=$row->fetchAll(PDO::FETCH_OBJ);

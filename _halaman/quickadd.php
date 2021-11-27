@@ -69,7 +69,7 @@
                             <div class="col-lg-12 mb-3">
                                 <div class="form-group">
                                     <label class="text-label">Penanggungjawab*</label>
-                                    <input type="text" name="pj_pasien" class="form-control" >
+                                    <input type="text" name="pj_pasien" class="form-control" required >
                                 </div>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                             <div class="col-lg-12 mb-2">
                                 <div class="form-group ">
                                     <label class="text-label">Status Pasien</label>
-                                    <select class="form-control" name="statusPasien">
+                                    <select class="form-control" name="statusPasien" required>
                                         <option>Pilih Status Pasien</option>
                                         <option>Rawat Inap</option>
                                         <option>Rawat Jalan</option>

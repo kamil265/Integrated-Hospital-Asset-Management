@@ -28,28 +28,20 @@
                             </div>
 							<div class="col-12">
 								<div class="form-group">
-                                	<label>Hari Praktik</label>
-                                    <select class="form-control" id="sel2" name="hari_praktik">
-                                        <option>Senin</option>
-                                        <option>Selasa</option>
-                                        <option>Rabu</option>
-                                        <option>Kamis</option>
-                                        <option>Jumat</option>
-										<option>Sabtu</option>
-                                        <option>Minggu</option>
-                                    </select>
+                                	<label>Tanggal Praktik</label>
+                                    <input type="date" name="tanggal_praktik" class="form-control">
                                 </div>
 							</div>
 							<div class="col-lg-6 mb-4">
                                 <label>Jam Mulai Praktik</label>
-                                <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
-                                    <input type="text" name="jam_mulai" class="form-control" value="00:00"> <span class="input-group-append"><span class="input-group-text"><iclass="fa fa-clock-o"></i></span></span>
+                                <div class="input-group">
+                                    <input type="time" name="jam_mulai" class="form-control" value="00:00"> 
                                 </div>
                         	</div>
 							<div class="col-lg-6 mb-4">
                                 <label>Jam Selesai Praktik</label>
-                                <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
-                                    <input type="text" name="jam_selesai" class="form-control" value="00:00"> <span class="input-group-append"><span class="input-group-text"><iclass="fa fa-clock-o"></i></span></span>
+                                <div class="input-group" >
+                                    <input type="time" name="jam_selesai" class="form-control" value="00:00"> 
                                 </div>
                         	</div>
 						</div>
@@ -91,7 +83,7 @@
 					<div class="table-responsive p-4 ">
                         <table class="table patient-activity">
 							<?php 
-								$sql = "SELECT * FROM view_jadwaldokter WHERE jadwalid!=''";
+								$sql = "SELECT * FROM view_jadwaldokter WHERE jadwalid!='' AND hari_praktik=CURRENT_DATE()";
 								$query = $dbh -> prepare($sql);
 								$query->execute();
 								$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -155,6 +147,7 @@
                                 	<th>No</th>    
                                     <th>Nama Dokter</th>
 									<th>Spesialisasi</th>
+                                    <th>Tanggal</th>       
                                     <th>Jam Praktik</th>       
                                     <th>Action</th>                         
 								</tr>
@@ -175,6 +168,7 @@
 									<td><?php echo $cnt;?></td>
                                     <td><?php echo htmlentities($result->nama_dokter);?></td>
                                     <td><?php echo htmlentities($result->spesialis);?></td>
+                                    <td><?php echo htmlentities($result->hari_praktik);?></td>
 									<td><?php echo htmlentities($result->jam_mulai);?> - <?php echo htmlentities($result->jam_selesai);?>  </td>
                                     <td>
 										<div class="d-flex">

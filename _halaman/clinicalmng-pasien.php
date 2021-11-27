@@ -146,7 +146,7 @@ include 'connect.php';
                 <div class="card-body p-4">
                     <div class="media ai-icon">
                         <span class="mr-3 bgl-warning text-info">
-							<i class="la la-baby"></i>
+							<i class="fas fa-baby"></i>
                         </span>
                         <div class="media-body">
                             <p class="mb-1">Pasien Bayi</p>
@@ -169,7 +169,7 @@ include 'connect.php';
                 <div class="card-body p-4">
                     <div class="media ai-icon">
                         <span class="mr-3 bgl-warning text-info">
-							<i class="la la-child"></i>
+							<i class="fas fa-child"></i>
 			            </span>
                         <div class="media-body">
                             <p class="mb-1">Pasien Anak</p>
@@ -192,7 +192,7 @@ include 'connect.php';
                 <div class="card-body p-4">
                     <div class="media ai-icon">
                         <span class="mr-3 bgl-warning text-info">
-							<i class="la la-user"></i>
+							<i class="fas fa-user"></i>
                         </span>
                         <div class="media-body">
                             <p class="mb-1">Pasien Dewasa</p>

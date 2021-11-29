@@ -15,6 +15,8 @@
                 echo htmlentities($result->rfid_uid);
             }
         }
+
+        json_encode($results);
         // else
         // {
         //     echo "<span style='color:red'> UID Tidak Valid .</span>";

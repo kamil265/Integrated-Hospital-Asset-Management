@@ -30,17 +30,18 @@
 
                                 </div>
                             </div>
-                        	<div class="col-lg-12 mb-2">
+                        	<!-- <div class="col-lg-12 mb-2">
                                 <div class="form-group">
                                     <label class="text-label">UID</label>
-                                    <span type="text" name="uid_jadwaldok" id="uid_jadwaldok" class="form-control" ></span>
+                                    <span type="text" name="uid_jadwaldok" id="uid_jadwaldok" class="form-control" ></span> -->
                                     <!-- <label class="text-label">UID Dokter</label> -->
                                     <!-- <input type="text" name="uid_jadwaldok" id="uid_jadwaldok" onblur="getDokter()" class="form-control" required> -->
-                                </div>
+                                <!-- </div>
 								<div class="form-group">
                                     <span id="get_data_dokter" style="font-size:16px;"></span> 
                                 </div>
-                            </div>
+                            </div> -->
+                            <hr>
 							<div class="col-12">
 								<div class="form-group">
                                 	<label>Tanggal Praktik</label>

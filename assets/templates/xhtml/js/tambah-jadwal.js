@@ -2,16 +2,21 @@ function getDokter() {
     // $("#loaderIcon").show();
     jQuery.ajax(
     {
-        url: "getDokter.php",
-        data:'nama_dokter='+$("#nama_dokter").val(),
+        url: "getDetailDokter.php",
+        dataType:'json',
         type: "POST",
         success:function(data)
         {
-            $("#uid_jadwaldok").html(data);
+            showDokter(data)
+            // $("#uid_jadwaldok").html('value',data);
             // $("#loaderIcon").hide();
         },
             error:function (){}
         }); 
+    }
+    function showDokter(data){
+        $("#uid_jadwaldok").html(data[0].kode_rfid);
+
     }
 function getPerawat(){
     $("#loaderIcon").show();

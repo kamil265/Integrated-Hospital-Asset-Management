@@ -439,7 +439,8 @@ include 'connect.php';
                                     <th>Nomor Telepon</th>
                                     <th>Jenis Kamar</th>
                                     <th>Kelas Kamar</th>
-                                    <th>Ruang</th>       
+                                    <th>Ruang</th>
+                                    <th>Dokter Penanggung Jawab</th>       
                                     <th>Action</th>                         
 								</tr>
                             </thead>
@@ -465,6 +466,7 @@ include 'connect.php';
                                     <td><?php echo htmlentities($result->jenis_kamar);?></td>
                                     <td><?php echo htmlentities($result->kelas_kamar);?></td>
                                     <td><?php echo htmlentities($result->ruang);?></td>
+                                    <td><?php echo htmlentities($result->dokter_penanggungjawab);?></td>
                                     <td>
 										<div class="d-flex">
                                             <a href="#" id="<?php echo htmlentities ($result->jadwalid); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditreservasikamar" ><i class="fa fa-pencil" ></i></a>

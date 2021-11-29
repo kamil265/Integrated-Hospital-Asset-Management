@@ -1,23 +1,18 @@
-function getDokter() {
-    // $("#loaderIcon").show();
+function getDokter(){
+    $("#loaderIcon").show();
     jQuery.ajax(
     {
-        url: "getDetailDokter.php",
-        dataType:'json',
+        url: "getDokter.php",
+        data:'uid_jadwaldok='+$("#uid_jadwaldok").val(),
         type: "POST",
         success:function(data)
         {
-            showDokter(data)
-            // $("#uid_jadwaldok").html('value',data);
-            // $("#loaderIcon").hide();
+            $("#get_data_dokter").html(data);
+            $("#loaderIcon").hide();
         },
             error:function (){}
         }); 
-    }
-    function showDokter(data){
-        $("#uid_jadwaldok").html(data[0].kode_rfid);
-
-    }
+}
 function getPerawat(){
     $("#loaderIcon").show();
     jQuery.ajax(

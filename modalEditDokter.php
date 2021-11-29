@@ -50,9 +50,8 @@
                                 <div class="form-group ">
                                     <label class="text-label">Jenis Kelamin</label>
                                     <select class="form-control" name="dr_jk">
-                                    <option ><?php echo htmlentities($result->jenis_kelamin_dokter);?></option>
-                                        <option>Pria</option>
-                                        <option>Wanita</option>
+                                        <option value="Pria"<?php if($result->jenis_kelamin_dokter == 'Pria') { ?> selected="selected"<?php } ?>>Pria</option>
+                                        <option value="Wanita"<?php if($result->jenis_kelamin_dokter == 'Wanita') { ?> selected="selected"<?php } ?>>Wanita</option>
                                     </select>
                                 </div>
                             </div>

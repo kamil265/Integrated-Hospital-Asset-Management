@@ -3,7 +3,7 @@ function getDokter(){
     jQuery.ajax(
     {
         url: "getDokter.php",
-        data:'uid_jadwaldok='+$("#uid_jadwaldok").val(),
+        data:'nama_jadwaldok='+$("#nama_jadwaldok").val(),
         type: "POST",
         success:function(data)
         {

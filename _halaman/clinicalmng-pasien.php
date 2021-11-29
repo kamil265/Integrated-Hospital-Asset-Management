@@ -2,7 +2,8 @@
 $title="Clinical Management - Pasien";
 include 'connect.php';
 ?>
-
+<div class="container-fluid">
+<div class="row">
 <div class="modal fade" id="modal-tambah-pemindahan" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -139,8 +140,6 @@ include 'connect.php';
 </div>
 <div id="modalEditClinicalPasien" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div>
-<div class="container-fluid">
-	<div class="row">
 	    <div class="col-xl-3 col-lg-6 col-sm-6">
             <div class="widget-stat card">
                 <div class="card-body p-4">
@@ -250,6 +249,65 @@ include 'connect.php';
 		</div>
     </div>
     </div>
+    <div class="col-xl-12 col-lg-12 col-xxl-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Data Reservasi Kamar</h4>
+            	</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="example5" class="display" style="min-width: 100px">
+                            <thead>
+                                <tr>
+                                	<th>No</th>    
+                                    <th>Nama Pasien</th>
+									<th>NIK</th>
+                                    <th>Alamat</th>
+                                    <th>Diagnosa</th>
+                                    <th>Nomor Telepon</th>
+                                    <th>Jenis Kamar</th>
+                                    <th>Kelas Kamar</th>
+                                    <th>Ruang</th>       
+                                    <th>Action</th>                         
+								</tr>
+                            </thead>
+                            <tbody>
+							<?php 
+								$sql = "SELECT * FROM view_reservasikamar WHERE jadwalid!=''";
+								$query = $dbh -> prepare($sql);
+								$query->execute();
+								$results=$query->fetchAll(PDO::FETCH_OBJ);
+								$cnt=1;
+								if($query->rowCount() > 0)
+								{
+									foreach($results as $result)
+									{               
+										?>  
+                            	<tr>
+									<td><?php echo $cnt;?></td>
+                                    <td><?php echo htmlentities($result->nama_pasien);?></td>
+                                    <td><?php echo htmlentities($result->nik);?></td>
+                                    <td><?php echo htmlentities($result->alamat);?></td>
+                                    <td><?php echo htmlentities($result->diagnosa);?></td>
+                                    <td><?php echo htmlentities($result->nomor_telepon);?></td>
+                                    <td><?php echo htmlentities($result->jenis_kamar);?></td>
+                                    <td><?php echo htmlentities($result->kelas_kamar);?></td>
+                                    <td><?php echo htmlentities($result->ruang);?></td>
+                                    <td>
+										<div class="d-flex">
+                                            <a href="#" id="<?php echo htmlentities ($result->jadwalid); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditreservasikamar" ><i class="fa fa-pencil" ></i></a>
+											<a href="deleteReservasiKamar.php?id=<?php echo htmlentities($result->jadwalid);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
+										</div>												
+									</td>
+                                    								
+                                </tr>
+								<?php $cnt=$cnt+1;}} ?>                                      
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>   
         <div class="col-xl-12 col-lg-12 col-xxl-12 col-sm-12">
             <div class="card">
                 <div class="card-header">
@@ -316,8 +374,7 @@ include 'connect.php';
                 </div>
             </div>
         </div>
-    </div>
-</div>
+
 
 
 <!--**********************************

@@ -1,5 +1,5 @@
 $(document).ready(function(){  
-    $('#nama_dokter').keyup(function(){  
+    $('#uid_jadwaldok').keyup(function(){  
          var query = $(this).val();  
          if(query != '')  
          {  
@@ -16,7 +16,7 @@ $(document).ready(function(){
          }  
     });  
     $(document).on('click', 'li', function(){  
-         $('#nama_dokter').val($(this).text());  
+         $('#uid_jadwaldok').val($(this).text());  
          $('#resultNamaDokter').fadeOut();  
     });  
 });  

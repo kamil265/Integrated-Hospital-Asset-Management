@@ -1,26 +1,29 @@
 <?php 
     require_once("connect.php");
-    if(!empty($_POST["nama_dokter"])) 
+    if(!empty($_POST["uid_jadwaldok"])) 
     {
-        $uidJadwalDokter= ($_POST["nama_dokter"]);
-        $sql ="SELECT rfid_uid, spesialis FROM tb_dokter WHERE nama_dokter=:nama_dokter";
+        $uidJadwalDokter= ($_POST["uid_jadwaldok"]);
+        $sql ="SELECT rfid_uid,nama_dokter, spesialis FROM tb_dokter WHERE nama_dokter=:uid_jadwaldok";
         $query= $dbh -> prepare($sql);
-        $query-> bindParam(':nama_dokter', $uidJadwalDokter, PDO::PARAM_STR);
+        $query-> bindParam(':uid_jadwaldok', $uidJadwalDokter, PDO::PARAM_STR);
         $query-> execute();
         $results = $query -> fetchAll(PDO::FETCH_OBJ);
         $cnt=1;
         if($query -> rowCount() > 0)
         {
             foreach ($results as $result) {
-                echo htmlentities($result->rfid_uid);
+                ?>
+                <h6 class="mb-0">UID Dokter:  <?php echo htmlentities($result->rfid_uid);?> </h6><br>
+                <h6 class="mb-0">Spesialis : <?php echo htmlentities($result->spesialis);?> </h6><br>
+                    
+                    <?php
+                    echo "<script>$('#submit').prop('disabled',false);</script>";
             }
         }
-
-        json_encode($results);
-        // else
-        // {
-        //     echo "<span style='color:red'> UID Tidak Valid .</span>";
-        //     echo "<script>$('#submit').prop('disabled',true);</script>";
-        // }
+        else
+        {
+            echo "<span style='color:red'> UID Tidak Valid .</span>";
+            echo "<script>$('#submit').prop('disabled',true);</script>";
+        }
     }
 ?>

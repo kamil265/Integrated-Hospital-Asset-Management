@@ -75,7 +75,7 @@
         	<div class="card" id="jadwalDokter">
 				<div class="card-header">
 				<h4 class="card-intro-title">Jadwal Dokter Hari ini</h4>
-						<!-- <button class="btn btn-primary btn-xs mr-0"><?php echo date('d F Y'); ?></button> -->
+						<!-- <button class="btn btn-primary btn-xs mr-0"></button> -->
 					<span>
 						<button onclick="openFullscreen();" class="btn btn-primary btn-xs"><i class="fa fa-expand" aria-hidden="true"></i></button>
 					</span>
@@ -116,20 +116,6 @@
 							<?php }}?>
                         </table>
                     </div>
-                    <!-- <div class="bootstrap-carousel">
-                        <div class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./images/big/img4.jpg" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./images/big/img5.jpg" alt="Third slide">
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
            		</div>
         	</div>
 		</div>
@@ -187,11 +173,6 @@
                 </div>
             </div>
         </div>
-
-<!--**********************************
-            Perawat
-    ***********************************-->
-
     <div class="modal fade modal-tambah-jadwalperawat" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -297,20 +278,6 @@
 							<?php }}?>
                         </table>
                     </div>
-                    <!-- <div class="bootstrap-carousel">
-                        <div class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./images/big/img4.jpg" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./images/big/img5.jpg" alt="Third slide">
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
            		</div>
         	</div>
 		</div>
@@ -366,14 +333,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-<!--**********************************
-            Karyawan
-    ***********************************-->
-
     <div class="modal fade modal-tambah-jadwalkaryawan" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -479,20 +438,6 @@
 							<?php }}?>
                         </table>
                     </div>
-                    <!-- <div class="bootstrap-carousel">
-                        <div class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./images/big/img4.jpg" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./images/big/img5.jpg" alt="Third slide">
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
            		</div>
         	</div>
 		</div>
@@ -548,11 +493,6 @@
                 </div>
             </div>
         </div>
-    
-
-
-<!-- Log Data Tenaga Kesehatan -->
-
 <script>
 var elem = document.getElementById("jadwalDokter");
 function openFullscreen() {

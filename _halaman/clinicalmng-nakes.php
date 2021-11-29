@@ -17,10 +17,25 @@
                 <div>                    
                     <section>
                         <div class="row">
+                            <div class="col-lg-12 mb-2">
+                                <div class="form-group">
+                                    <label class="text-label" >Nama Dokter</label>
+                                    <div class="input-group mb-3">
+                                    <input type="text" name="nama_dokter" id="nama_dokter" class="form-control" required>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button" onclick="getDokter()" >Detail</button>
+                                            </div>
+                                    </div>
+                                    <div id="resultNamaDokter"></div>
+
+                                </div>
+                            </div>
                         	<div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">UID Dokter</label>
-                                    <input type="text" name="uid_jadwaldok" id="uid_jadwaldok" onblur="getDokter()" class="form-control" required>
+                                    <label class="text-label">UID</label>
+                                    <span type="text" name="uid_jadwaldok" id="uid_jadwaldok" class="form-control" ></span>
+                                    <!-- <label class="text-label">UID Dokter</label> -->
+                                    <!-- <input type="text" name="uid_jadwaldok" id="uid_jadwaldok" onblur="getDokter()" class="form-control" required> -->
                                 </div>
 								<div class="form-group">
                                     <span id="get_data_dokter" style="font-size:16px;"></span> 

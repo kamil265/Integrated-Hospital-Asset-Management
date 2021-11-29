@@ -1,14 +1,14 @@
 function getDokter() {
-    $("#loaderIcon").show();
+    // $("#loaderIcon").show();
     jQuery.ajax(
     {
         url: "getDokter.php",
-        data:'uid_jadwaldok='+$("#uid_jadwaldok").val(),
+        data:'nama_dokter='+$("#nama_dokter").val(),
         type: "POST",
         success:function(data)
         {
-            $("#get_data_dokter").html(data);
-            $("#loaderIcon").hide();
+            $("#uid_jadwaldok").html(data);
+            // $("#loaderIcon").hide();
         },
             error:function (){}
         }); 

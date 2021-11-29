@@ -80,6 +80,9 @@
     
     
     <script src="<?=templates()?>js/spanValue.js"></script>
+    <script src="<?=templates()?>js/searchDokter.js"></script>
+    <script src="<?=templates()?>js/tambah-jadwal.js"></script>
+
 
     <script src="<?=templates()?>js/getIDPasien.js"></script>
     <script src="<?=templates()?>js/getIDdok.js"></script>

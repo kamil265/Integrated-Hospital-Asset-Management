@@ -4,7 +4,7 @@ include 'connect.php';
 ?>
 <div class="container-fluid">
 <div class="row">
-<div class="modal fade" id="modal-tambah-pemindahan" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="modal-reservasi" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -230,7 +230,7 @@ include 'connect.php';
 			</div>
 			<div class="row">
 				<div class="widget-stat card bg-success mr-4 mb-2" style="width: 100%;">
-					<a href="#" data-toggle="modal" data-target="#modal-tambah-pemindahan">
+					<a href="#" data-toggle="modal" data-target=".modal-tambah-pemindahanpasien">
 						<div class="card-body p-3 ">
                     		<div class="media ai-icon ">
                        			<!-- <span class="mr-3 bgl-warning text-info">
@@ -249,131 +249,7 @@ include 'connect.php';
 		</div>
     </div>
     </div>
-    <div class="col-xl-12 col-lg-12 col-xxl-12 col-sm-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Data Reservasi Kamar</h4>
-            	</div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table id="example5" class="display" style="min-width: 100px">
-                            <thead>
-                                <tr>
-                                	<th>No</th>    
-                                    <th>Nama Pasien</th>
-									<th>NIK</th>
-                                    <th>Alamat</th>
-                                    <th>Diagnosa</th>
-                                    <th>Nomor Telepon</th>
-                                    <th>Jenis Kamar</th>
-                                    <th>Kelas Kamar</th>
-                                    <th>Ruang</th>       
-                                    <th>Action</th>                         
-								</tr>
-                            </thead>
-                            <tbody>
-							<?php 
-								$sql = "SELECT * FROM view_reservasikamar WHERE jadwalid!=''";
-								$query = $dbh -> prepare($sql);
-								$query->execute();
-								$results=$query->fetchAll(PDO::FETCH_OBJ);
-								$cnt=1;
-								if($query->rowCount() > 0)
-								{
-									foreach($results as $result)
-									{               
-										?>  
-                            	<tr>
-									<td><?php echo $cnt;?></td>
-                                    <td><?php echo htmlentities($result->nama_pasien);?></td>
-                                    <td><?php echo htmlentities($result->nik);?></td>
-                                    <td><?php echo htmlentities($result->alamat);?></td>
-                                    <td><?php echo htmlentities($result->diagnosa);?></td>
-                                    <td><?php echo htmlentities($result->nomor_telepon);?></td>
-                                    <td><?php echo htmlentities($result->jenis_kamar);?></td>
-                                    <td><?php echo htmlentities($result->kelas_kamar);?></td>
-                                    <td><?php echo htmlentities($result->ruang);?></td>
-                                    <td>
-										<div class="d-flex">
-                                            <a href="#" id="<?php echo htmlentities ($result->jadwalid); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditreservasikamar" ><i class="fa fa-pencil" ></i></a>
-											<a href="deleteReservasiKamar.php?id=<?php echo htmlentities($result->jadwalid);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
-										</div>												
-									</td>
-                                    								
-                                </tr>
-								<?php $cnt=$cnt+1;}} ?>                                      
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>   
-        <div class="col-xl-12 col-lg-12 col-xxl-12 col-sm-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Riwayat Pemindahan Pasien</h4>
-            	</div>
-                <div class="card-body">
-                <div class="table-responsive">
-                                    <table class="table table-responsive-md">
-                                        <thead>
-                                            <tr>
-                                                <th style="width:80px;" ><strong>NO</strong></th>
-                                                <th><strong>RFID UID</strong></th>
-                                                <th><strong>TANGGAL MASUK</strong></th>
-                                                <th><strong>KATEGORI PASIEN</strong></th>
-                                                <th><strong>NAMA PASIEN</strong></th>                          
-                                                <th><strong>DOKTER</strong></th>
-                                                <th><strong>DIAGNOSA</strong></th>
-                                                <th><strong>STATUS</strong></th>
-                                                <th><strong>ASAL RUANG</strong></th>
-                                                <th><strong>RUANG PEMINDAHAN</strong></th>
-                                                <th><strong>ACTION</strong></th>
-                                                <th></th>  
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                    <?php 
-									$sql = "SELECT * FROM tb_clinical_pasien WHERE 1";
-									$row = $dbh -> prepare($sql);
-									$row->execute();
-									$results=$row->fetchAll(PDO::FETCH_OBJ);
-									$cnt=1;
-									if($row->rowCount() > 0)
-									{
-										foreach($results as $result)
-									{               
-								    ?>
-                                            <tr>
-                                                <td><?php echo $cnt;?></td>
-                                                <td><?php echo htmlentities($result->tag_id);?></td>
-                                                <td><?php echo htmlentities($result->tanggal_masuk);?></td>
-                                                <td><?php echo htmlentities($result->jenis_pasien);?></td>
-                                                <td><?php echo htmlentities($result->nama_pasien);?></td>
-                                                <td><?php echo htmlentities($result->dokter);?></td>
-                                                <td><?php echo htmlentities($result->diagnosa);?></td>
-                                                <td><?php echo htmlentities($result->status);?></td>
-                                                <td><?php echo htmlentities($result->asal_ruang);?></td>
-                                                <td><?php echo htmlentities($result->ruang_pemindahan);?></td>
-                                                
-                                                <td>
-                                                <div class="d-flex">
-                                                <a href="#" id="<?php echo htmlentities($result->id);?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditclinicalpasien"><i class="fa fa-pencil"></i></a>
-                                                
-                                                <a href="deleteclinicpasien.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
-                                                </div>	
-                                                </td>
-                                            </tr>
-
-                                            <?php $cnt++;}} ?>  
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                </div>
-            </div>
-        </div>
+ 
 
 
 
@@ -542,6 +418,143 @@ include 'connect.php';
     </div>
 </div>
 
+<!--**********************************
+            Pemindahan Pasien
+    ***********************************-->
+
+
+    <script src="<?=templates()?>js/tambah-pemindahanpasien.js"></script>
+
+
+<div class="modal fade modal-tambah-pemindahanpasien" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Pemindahan Pasien</h3>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                </button>
+            </div>
+        <div class="modal-body">
+            <form action="addPemindahanPasien.php" method="POST"  class="step-form-horizontal">
+                <div>                    
+                    <section>
+                        <div class="row">
+                        	<div class="col-lg-12 mb-2">
+                                <div class="form-group">
+                                    <label class="text-label">UID Pasien</label>
+                                    <input type="text" name="uid_pemindahanpasien" id="uid_pemindahanpasien" onblur="getPemindahanPasien()" class="form-control" required>
+                                </div>
+								<div class="form-group">
+                                    <span id="get_data_pemindahanpasien" style="font-size:16px;"></span> 
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mb-3">
+                                <div class="form-group">
+                                    <label class="text-label">ASAL RUANG</label>
+                                    <input type="text" name="asal_ruang" id="sel2" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mb-3">
+                                <div class="form-group">
+                                    <label class="text-label">RUANG PEMINDAHAN</label>
+                                    <input type="text" name="ruang_pemindahan" id="sel2" class="form-control" required>
+                                </div>
+                            </div>
+						</div>
+                    </section>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger light" data-dismiss="modal">Batal</button>
+                    <button type="submit" name="tambahPemindahanPasien" class="btn btn-primary">Tambah</button>
+                </div>
+            </form>
+        </div>
+            
+        </div>
+    </div>
+</div>
+<div id="modalEditJadwal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalEditJadwalPerawat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalEditJadwalKaryawan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalEditDokter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalEditPerawat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalEditKaryawan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalEditReservasiKamar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalEditPemindahanPasien" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div class="container-fluid">
+	<div class="row">
+        <div class="col-xl-12 col-lg-12 col-xxl-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Data Pemindahan Pasien</h4>
+            	</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="example5" class="display" style="min-width: 100px">
+                            <thead>
+                                <tr>
+                                	<th>NO</th>
+                                    <th>RFID UID</th>
+                                    <th>TANGGAL MASUK</th>
+                                    <th>KATEGORI PASIEN</th>    
+                                    <th>NAMA PASIEN</th>
+                                    <th>DOKTER PENANGGUNG JAWAB</th>
+                                    <th>DIAGNOSA</th>
+                                    <th>STATUS</th>
+									<th>ASAL RUANG</th>
+                                    <th>RUANG PEMINDAHAN</th>
+                                    <th>ACTION</th>                     
+								</tr>
+                            </thead>
+                            <tbody>
+							<?php 
+								$sql = "SELECT * FROM view_pemindahanpasien WHERE jadwalid!=''";
+								$query = $dbh -> prepare($sql);
+								$query->execute();
+								$results=$query->fetchAll(PDO::FETCH_OBJ);
+								$cnt=1;
+								if($query->rowCount() > 0)
+								{
+									foreach($results as $result)
+									{               
+										?>  
+                            	<tr>
+									<td><?php echo $cnt;?></td>
+                                    <td><?php echo htmlentities($result->kode_rfid);?></td>
+                                    <td><?php echo htmlentities($result->tanggal_masuk);?></td>
+                                    <td><?php echo htmlentities($result->kategori_pasien);?></td>
+                                    <td><?php echo htmlentities($result->nama);?></td>                                    
+                                    <td><?php echo htmlentities($result->dokter_penanggungjawab);?></td>
+                                    <td><?php echo htmlentities($result->diagnosa);?></td>
+                                    <td><?php echo htmlentities($result->status_pasien);?></td>
+                                    <td><?php echo htmlentities($result->asal_ruang);?></td>
+                                    <td><?php echo htmlentities($result->ruang_pemindahan);?></td>
+                                    
+                                    <td>
+										<div class="d-flex">
+                                            <a href="#" id="<?php echo htmlentities ($result->jadwalid); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditpemindahanpasien" ><i class="fa fa-pencil" ></i></a>
+											<a href="deletePemindahanPasien.php?id=<?php echo htmlentities($result->jadwalid);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
+										</div>												
+									</td>
+                                    								
+                                </tr>
+								<?php $cnt=$cnt+1;}} ?>                                      
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
 
 
 

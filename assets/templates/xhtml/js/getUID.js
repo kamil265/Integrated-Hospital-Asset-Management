@@ -15,3 +15,4 @@ function show(data) {
 
     // document.getElementById('get_uid').html(data[0].rfid_uid);
   }
+

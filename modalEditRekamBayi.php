@@ -16,7 +16,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <h3 class="modal-title">Edit REKAM MEDIS - BAYI</h3>
-            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+            <!-- <button type="button" class="close" data-dismiss="modal"><span>&times;</span> -->
             </button>
         </div>
     <div class="modal-body">

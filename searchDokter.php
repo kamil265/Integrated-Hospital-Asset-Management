@@ -13,7 +13,6 @@
     cursor:pointer;
     width: 100%; ">';
 
-
     if($query -> rowCount() > 0)
         {
             foreach ($results as $result)

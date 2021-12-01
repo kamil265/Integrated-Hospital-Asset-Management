@@ -1,7 +1,7 @@
 <?php
     session_start();
     error_reporting(0);
-    include'connect.php';
+    include 'connect.php';
     if(strlen($_SESSION['alogin'])==0)
     {   
         header('location:login.php');

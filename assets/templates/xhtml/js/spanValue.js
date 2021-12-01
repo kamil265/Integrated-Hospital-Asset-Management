@@ -32,9 +32,9 @@ function uidKaryawan(){
 }
 function uidPemindahanPasien(){
 
-    uid_pasien = $('.valueUIDpasien').html();
+    uid_pasien = $('.valueUIDpemindahanpasien').html();
 
-    $("#uid_pasien").val(uid_pasien);
+    $("#uid_pemindahanpasien").val(uid_pemindahanpasien);
 
     $("#formAddPemindahanPasien").submit();
 }

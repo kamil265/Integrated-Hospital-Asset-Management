@@ -30,3 +30,11 @@ function uidKaryawan(){
 
     $("#formAddKaryawan").submit();
 }
+function uidAset(){
+
+    uid_karyawan = $('.valueUIDaset').html();
+
+    $("#uid_aset").val(uid_aset);
+
+    $("#formAddAset").submit();
+}

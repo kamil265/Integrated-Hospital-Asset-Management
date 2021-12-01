@@ -32,7 +32,7 @@ include 'connect.php';
                         </thead>
                         <tbody>
                             <?php 
-								$sql = "SELECT*FROM tb_pasien";
+								$sql = "SELECT*FROM tb_pasien WHERE status=0";
 								$query = $dbh -> prepare($sql);
 								$query->execute();
 								$results=$query->fetchAll(PDO::FETCH_OBJ);

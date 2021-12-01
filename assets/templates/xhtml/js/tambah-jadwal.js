@@ -18,7 +18,7 @@ function getPerawat(){
     jQuery.ajax(
     {
         url: "getPerawat.php",
-        data:'uid_jadwalprwt='+$("#uid_jadwalprwt").val(),
+        data:'nama_jadwalper='+$("#nama_jadwalper").val(),
         type: "POST",
         success:function(data)
         {

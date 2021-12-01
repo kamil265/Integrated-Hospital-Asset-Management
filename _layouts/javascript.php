@@ -82,7 +82,8 @@
     
     <script src="<?=templates()?>js/spanValue.js"></script>
     <script src="<?=templates()?>js/searchDokter.js"></script>
-    <script src="<?=templates()?>js/searchPemindahanPasien.js"></script>
+    <script src="<?=templates()?>js/searchKaryawan.js"></script>
+    <script src="<?=templates()?>js/searchPerawat.js"></script>
     <script src="<?=templates()?>js/tambah-jadwal.js"></script>
 
 

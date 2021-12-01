@@ -13,8 +13,10 @@
         {
             foreach ($results as $result) {
                 ?>
-                <h6 class="mb-0">Nama Karyawan :  <?php echo htmlentities($result->nama_karyawan);?> </h6><br>
-                <h6 class="mb-0">Divisi : <?php echo htmlentities($result->divisi_karyawan);?> </h6><br>
+                    <input type="hidden" name="uid_jadwaldok" class="form-control" value="<?php echo htmlentities($result->rfid_uid);?>" required>  <br>  
+                    <label>Divisi</label><br>
+                    <input type="text" name="spes_jadwaldok" class="form-control" value="<?php echo htmlentities($result->spesialis);?> " readonly required>  <br>   
+                    <hr>            
                     
                     <?php
                     echo "<script>$('#submit').prop('disabled',false);</script>";
@@ -22,7 +24,6 @@
         }
         else
         {
-            echo "<span style='color:red'> UID Tidak Valid .</span>";
             echo "<script>$('#submit').prop('disabled',true);</script>";
         }
     }

@@ -1,5 +1,5 @@
 <div class="nav-header">
-            <a href="index.html" class="brand-logo">
+            <a href="index.php?halaman=dashboard" class="brand-logo">
                 <img class="logo-abbr" src="<?=templates()?>images/logo.png" alt="">
                 <img class="logo-compact" src="<?=templates()?>images/logo-text.png" alt="">
                 <img class="brand-title" src="<?=templates()?>images/logo-text.png" alt="">

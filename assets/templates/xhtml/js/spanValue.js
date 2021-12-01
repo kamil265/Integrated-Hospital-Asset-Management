@@ -30,11 +30,11 @@ function uidKaryawan(){
 
     $("#formAddKaryawan").submit();
 }
-function uidPemindahanPasien(){
+function uidAset(){
 
-    uid_pasien = $('.valueUIDpemindahanpasien').html();
+    uid_karyawan = $('.valueUIDaset').html();
 
-    $("#uid_pemindahanpasien").val(uid_pemindahanpasien);
+    $("#uid_aset").val(uid_aset);
 
-    $("#formAddPemindahanPasien").submit();
+    $("#formAddAset").submit();
 }

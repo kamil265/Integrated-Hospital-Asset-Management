@@ -4,7 +4,7 @@
   if(isset($_POST["query"])){
     $output = '';
     $keywords = "%".$_POST["query"]."%";
-    $sql = "SELECT * FROM tb_dokter WHERE nama_dokter LIKE :keywords AND status=1 LIMIT 10";
+    $sql = "SELECT * FROM tb_perawat WHERE nama_perawat LIKE :keywords AND status=1 LIMIT 10";
     $query= $dbh -> prepare($sql);
     $query-> bindParam('keywords', $keywords, PDO::PARAM_STR);
     $query-> execute();
@@ -19,7 +19,7 @@
             { 
                 $output .= '<li style="padding:12px;
                 border:thin solid #F0F8FF; :hover{
-                    background-color:#7FFFD4;}">'.($result->nama_dokter).'</li>';  
+                    background-color:#7FFFD4;}">'.($result->nama_perawat).'</li>';  
             }
         }
         else

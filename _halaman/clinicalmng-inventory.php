@@ -13,14 +13,24 @@
                 </button>
             </div>
         <div class="modal-body">
-            <form action="addInventory.php" method="POST"  class="step-form-horizontal">
+            <form action="addInventory.php" method="POST" id="formAddAset" >
                 <div>                    
                     <section>
                         <div class="row">
-                        	<div class="col-lg-12 mb-2">
-                                <div class="form-group">
-                                    <label class="text-label">RFID UID</label>
-                                    <input type="text" name="uid_aset" class="form-control" required>
+                        <div class="col-lg-12 mb-2">
+                            <div class="form-group">
+                                    <label class="text-label" >RFID UID</label>
+                                    <div class="input-group mb-3">
+                                        <div class="form-control">
+                                            <span class="valueUIDaset" id="get_uidAset">
+                                                Tap Kartu kemudian tekan tombol scan
+                                            </span>
+                                        </div>
+                                    <input type="hidden" name="uid_aset" id="uid_aset" class="form-control" required>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID()" >Scan</button>
+                                            </div>
+                                    </div>
                                 </div>
                             </div>
 							<div class="col-lg-12 mb-2">
@@ -444,7 +454,6 @@
                                     <th>NO</th>
                                     <th>RFID UID</th>
                                     <th>NAMA ALAT</th>
-									<th>KATEGORI</th>
                                     <th>PENANGGUNGJAWAB</th>
                                     <th>TANGGAL PEMINJAMAN</th>
                                     <th>TANGGAL KEMBALI</th>
@@ -467,7 +476,6 @@
                                     <td><?php echo $cnt;?></td>		
                                     <td><?php echo htmlentities($result->kode_rfid);?></td>
                                     <td><?php echo htmlentities($result->nama_aset);?></td>
-                                    <td><?php echo htmlentities($result->kategori);?></td>
                                     <td><?php echo htmlentities($result->nama_karyawan);?></td>
                                     <td><?php echo htmlentities($result->tgl_pinjam);?></td>
                                     <td>

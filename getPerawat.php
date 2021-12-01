@@ -1,11 +1,11 @@
 <?php 
     require_once("connect.php");
-    if(!empty($_POST["uid_jadwalprwt"])) 
+    if(!empty($_POST["nama_jadwalper"])) 
     {
-        $uidJadwalPerawat= strtoupper($_POST["uid_jadwalprwt"]);
-        $sql ="SELECT nama_perawat,divisi FROM tb_perawat WHERE rfid_uid=:uid_jadwalprwt";
+        $uidJadwalPerawat= strtoupper($_POST["nama_jadwalprwt"]);
+        $sql ="SELECT rfid_uid,divisi FROM tb_perawat WHERE nama_perawat=:nama_jadwalper";
         $query= $dbh -> prepare($sql);
-        $query-> bindParam(':uid_jadwalprwt', $uidJadwalPerawat, PDO::PARAM_STR);
+        $query-> bindParam(':nama_jadwalper', $uidJadwalPerawat, PDO::PARAM_STR);
         $query-> execute();
         $results = $query -> fetchAll(PDO::FETCH_OBJ);
         $cnt=1;
@@ -13,8 +13,10 @@
         {
             foreach ($results as $result) {
                 ?>
-                <h6 class="mb-0">Nama Perawat :  <?php echo htmlentities($result->nama_perawat);?> </h6><br>
-                <h6 class="mb-0">Divisi : <?php echo htmlentities($result->divisi);?> </h6><br>
+                    <input type="hidden" name="uid_jadwalprwt" class="form-control" value="<?php echo htmlentities($result->rfid_uid);?>" required>  <br>  
+                    <label>Divisi</label><br>
+                    <input type="text" name="spes_jadwalprwt" class="form-control" value="<?php echo htmlentities($result->divisi);?> " readonly required>  <br>   
+                    <hr>            
                     
                     <?php
                     echo "<script>$('#submit').prop('disabled',false);</script>";
@@ -22,7 +24,6 @@
         }
         else
         {
-            echo "<span style='color:red'> UID Tidak Valid .</span>";
             echo "<script>$('#submit').prop('disabled',true);</script>";
         }
     }

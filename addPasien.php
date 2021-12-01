@@ -2,11 +2,11 @@
     session_start();
     error_reporting(0);
     include 'connect.php';
-    // if(strlen($_SESSION['alogin'])==0)
-    // {   
-    //     header('location:index.php');
-    // }
-    // else{ 
+    if(strlen($_SESSION['alogin'])==0)
+    {   
+        header('location:index.php');
+    }
+    else{ 
         if(isset($_POST['insertPasien']))
         {
             $uidPas = $_POST['uid'];
@@ -37,14 +37,12 @@
             $lastInsertId = $dbh->lastInsertId();
             if($lastInsertId)
             {
-                $_SESSION['msg']="Book Listed successfully";
                 header('location:index.php?halaman=quickadd');
             }
             else 
             {
-                $_SESSION['error']="Something went wrong. Please try again";
                 header('location:index.php');
             }
         }
-    // }
+    }
 ?>

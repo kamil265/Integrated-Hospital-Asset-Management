@@ -82,6 +82,12 @@
                                     <input type="text" name="pj" class="form-control" required >
                                 </div>
                             </div>
+                            <div class="col-lg-12 mb-3">
+                                <div class="form-group">
+                                    <label class="text-label">Kontak Penanggungjawab*</label>
+                                    <input type="text" name="kontak_pj" class="form-control" required >
+                                </div>
+                            </div>
                         </div>
                     </section>
                     <!-- <h4>Identitas Penanggungjawab</h4>

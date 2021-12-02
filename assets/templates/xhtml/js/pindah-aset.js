@@ -14,20 +14,3 @@ function getUser() {
         }); 
     }
 
-function getAsset() 
-{
-    $("#loaderIcon").show();
-        jQuery.ajax(
-        {
-            url: "getAsset.php",
-            data:'uid_pinjamaset='+$("#uid_pinjamaset").val(),
-            type: "POST",
-            success:function(data)
-            {
-                $("#get_asset_name").html(data);
-                $("#loaderIcon").hide();
-            },
-            error:function (){}
-        });
-    }
-    

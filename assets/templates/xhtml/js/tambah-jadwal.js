@@ -13,6 +13,23 @@ function getDokter(){
             error:function (){}
         }); 
 }
+function getAsset() 
+{
+    $("#loaderIcon").show();
+        jQuery.ajax(
+        {
+            url: "getAsset.php",
+            data:'nama_aset='+$("#nama_aset").val(),
+            type: "POST",
+            success:function(data)
+            {
+                $("#get_nama_aset").html(data);
+                $("#loaderIcon").hide();
+            },
+            error:function (){}
+        });
+    }
+    
 function getPerawat(){
     $("#loaderIcon").show();
     jQuery.ajax(
@@ -43,3 +60,4 @@ function getKaryawan() {
             error:function (){}
         }); 
     }
+    

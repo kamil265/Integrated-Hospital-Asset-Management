@@ -1,8 +1,6 @@
 <?php
  $title="Clinical Management - Inventory";
 ?>
-<script src="<?=templates()?>js/pindah-aset.js"></script>
-
 
 <div class="modal fade modal-tambah-aset" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -195,22 +193,44 @@
                     <section>
                         <div class="row">
                         	<div class="col-lg-12 mb-2">
-                                <div class="form-group">
+                                <label class="text-label" >UID PENANGGUNGJAWAB</label>
+                                    <div class="input-group mb-3">
+                                        <div class="form-control">
+                                            <span class="valueUIDaset" id="get_uidAset">
+                                                Tap Kartu kemudian tekan tombol scan
+                                            </span>
+                                        </div>
+                                        <input type="hidden" name="uid_penanggungjawab" id="uid_penanggungjawab" class="form-control" required>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID()" >Scan</button>
+                                            </div>
+                                    </div>
+                                <!-- <div class="form-group">
                                     <label class="text-label">UID PENANGGUNGJAWAB</label>
                                     <input type="text" name="uid_penanggungjawab" id="uid_penanggungjawab" class="form-control" onBlur="getUser()" autocomplete="off" required>
                                 </div>
                                 <div class="form-group">
                                     <span id="get_user_name" style="font-size:16px; "></span> 
-                                </div>
+                                </div> -->
                             </div>
 							<div class="col-lg-12 mb-2">
+                            <div class="form-group">
+                                <label class="text-label" >Nama Aset</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" name="nama_aset" id="nama_aset" class="form-control" onblur="getAsset()" required>
+                                </div>
+                                <div id="resultAset"></div>
                                 <div class="form-group">
+                                    <span id="get_nama_aset"></span> 
+                                </div>
+                            </div>
+                                <!-- <div class="form-group">
                                     <label class="text-label">RFID UID</label>
                                     <input type="text" name="uid_pinjamaset" id="uid_pinjamaset" class="form-control" onBlur="getAsset()" required>
                                 </div>
                                 <div class="form-group">
                                     <span id="get_asset_name" style="font-size:16px;"></span> 
-                                </div>
+                                </div> -->
                             </div>
                     </section>
                 </div>

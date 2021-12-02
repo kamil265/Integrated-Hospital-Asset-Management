@@ -84,6 +84,7 @@
     <script src="<?=templates()?>js/searchDokter.js"></script>
     <script src="<?=templates()?>js/searchKaryawan.js"></script>
     <script src="<?=templates()?>js/searchPerawat.js"></script>
+    <script src="<?=templates()?>js/searchAset.js"></script>
     <script src="<?=templates()?>js/tambah-jadwal.js"></script>
 
 

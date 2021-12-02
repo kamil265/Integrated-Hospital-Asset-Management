@@ -77,6 +77,7 @@
     <script src="<?=templates()?>js/showEditKaryawan.js"></script>
     <script src="<?=templates()?>js/showEditClinicalPasien.js"></script>
     <script src="<?=templates()?>js/showEditReservasiKamar.js"></script>
+    <script src="<?=templates()?>js/showEditPemindahanPasien.js"></script>
     
     
     <script src="<?=templates()?>js/spanValue.js"></script>

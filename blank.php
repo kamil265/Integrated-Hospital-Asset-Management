@@ -161,8 +161,13 @@
                 <div>                    
                     <section>
                         <div class="row">
+<<<<<<< Updated upstream
                         <div class="col-lg-12 mb-2">
                             <div class="form-group">
+=======
+                            <div class="col-lg-12 mb-2">
+                                <div class="form-group">
+>>>>>>> Stashed changes
                                     <label class="text-label" >UID PASIEN</label>
                                     <div class="input-group mb-3">
                                         <div class="form-control">
@@ -170,10 +175,21 @@
                                                 Tap Kartu kemudian tekan tombol scan
                                             </span>
                                         </div>
+<<<<<<< Updated upstream
                                     <input type="hidden" name="uid_pemindahanpasien" id="uid_pemindahanpasien" class="form-control" required>
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID()" >Scan</button>
                                             </div>
+=======
+                                            <input type="hidden" name="uid_pemindahanpasien" id="uid_pemindahanpasien" class="form-control" required>
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID()" >Scan</button>
+                                                </div>
+                                                    <div id="resultNamaPasien"></div>
+                                                    <div class="form-group">
+                                                        <span id="get_data_pemindahanpasien"></span> 
+                                                    </div>
+>>>>>>> Stashed changes
                                     </div>
                                 </div>
                             </div>
@@ -283,4 +299,152 @@
             </div>
         </div>    
     </div>
+<<<<<<< Updated upstream
+=======
+</div>
+
+
+
+<!--**********************************
+    getPemindahanPasien.php - LAMA
+    ***********************************-->
+
+
+
+
+<?php 
+    require_once("connect.php");
+    if(!empty($_POST["uid_pemindahanpasien"])) 
+    {
+        $uidPemindahanPasien= strtoupper($_POST["uid_pemindahanpasien"]);
+        $sql ="SELECT kode_rfid, tanggal_masuk, kategori_pasien, nama, dokter_penanggungjawab, diagnosa, status_pasien FROM tb_pasien WHERE kode_rfid=:uid_pemindahanpasien";
+        $query= $dbh -> prepare($sql);
+        $query-> bindParam(':uid_pemindahanpasien', $uidPemindahanPasien, PDO::PARAM_STR);
+        $query-> execute();
+        $results = $query -> fetchAll(PDO::FETCH_OBJ);
+        $cnt=1;
+        if($query -> rowCount() > 0)
+        {
+            foreach ($results as $result) {
+                ?>
+                <h6 class="mb-0">Nama Pasien :  <?php echo htmlentities($result->nama);?> </h6><br>
+                <h6 class="mb-0">Diagnosa : <?php echo htmlentities($result->diagnosa);?> </h6><br>
+                <h6 class="mb-0">Status : <?php echo htmlentities($result->status_pasien);?> </h6><br>
+                    
+                    <?php
+                    echo "<script>$('#submit').prop('disabled',false);</script>";
+            }
+        }
+        else
+        {
+            echo "<span style='color:red'> UID Tidak Valid .</span>";
+            echo "<script>$('#submit').prop('disabled',true);</script>";
+        }
+    }
+?>
+
+<!--**********************************
+    getPemindahanPasien.php - BARU
+    ***********************************-->
+
+<?php 
+    require_once("connect.php");
+    if(!empty($_POST["uid_pemindahanpasien"])) 
+    {
+        $uidPemindahanPasien= ($_POST["uid_pemindahanpasien"]);
+        $sql ="SELECT kode_rfid, nama, nik, diagnosa FROM tb_dokter WHERE kode_rfid=:uid_pemindahanpasien AND status=1";
+        $query= $dbh -> prepare($sql);
+        $query-> bindParam(':uid_pemindahanpasien', $uidPemindahanPasien, PDO::PARAM_STR);
+        $query-> execute();
+        $results = $query -> fetchAll(PDO::FETCH_OBJ);
+        $cnt=1;
+        if($query -> rowCount() > 0)
+        {
+            foreach ($results as $result) {
+                ?>
+                    <input type="hidden" name="uid_pemindahanpasien" class="form-control" value="<?php echo htmlentities($result->kode_rfid);?>" required>  <br>  
+                    <label>Spesialisasi</label><br>
+                    <input type="text" name="diagnosa" class="form-control" value="<?php echo htmlentities($result->diagnosa);?> " readonly required>  <br>   
+                    <hr>            
+                    
+                    <?php
+                    echo "<script>$('#submit').prop('disabled',false);</script>";
+            }
+        }
+        else
+        {
+            echo "<script>$('#submit').prop('disabled',true);</script>";
+        }
+    }
+?>
+
+
+<!--**********************************
+Clinical Pemindahan Pasien dari Quick Add
+    ***********************************-->
+
+<div class="modal fade modal-tambah-pemindahanpasien" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Tambah Pemindahan Pasien</h3>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                </button>
+            </div>
+        <div class="modal-body">
+            <form action="addPemindahanPasien.php" method="POST" id="formAddPemindahanPasien" onsubmit="uidPemindahanPasien()">
+                <div>                    
+                    <section>
+                        <div class="row">
+                        <div class="col-lg-12 mb-2">
+                                <div class="form-group">
+                                    <label class="text-label">UID</label>
+                                    <div class="input-group mb-3">
+                                    <div class="form-control">
+                                            <span class="valueUIDpemindahanpasien" id="get_uidPemindahanPasien">
+                                                Tap Kartu kemudian tekan tombol scan
+                                            </span>
+                                        </div>
+                                    <input type="hidden" name="uid_pemindahanpasien" id="uid_pemindahanpasien" class="form-control" required>
+                                            <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID()" >Scan</button>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mb-3">
+                                <div class="form-group">
+                                    <label class="text-label">ASAL RUANG</label>
+                                    <input type="text" name="asal_ruang" id="sel2" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mb-3">
+                                <div class="form-group">
+                                    <label class="text-label">RUANG PEMINDAHAN</label>
+                                    <input type="text" name="ruang_pemindahan" id="sel2" class="form-control" required>
+                                </div>
+                            </div>
+						</div>
+                    </section>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger light" data-dismiss="modal">Batal</button>
+                    <button type="submit" name="tambahPemindahanPasien" class="btn btn-primary">Tambah</button>
+                </div>
+            </form>
+        </div>
+            
+        </div>
+    </div>
+</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger light" data-dismiss="modal">Batal</button>
+                    <button type="submit" name="tambahPemindahanPasien" class="btn btn-primary">Tambah</button>
+                </div>
+            </form>
+        </div>
+            
+        </div>
+    </div>
+>>>>>>> Stashed changes
 </div>

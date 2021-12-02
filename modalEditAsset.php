@@ -1,7 +1,7 @@
 <?php 
     include'connect.php';
     $idEdit=$_GET['id'];
-	$sql = "SELECT tb_inventory.id,tb_inventory.kode_rfid,tb_inventory.nama_aset,tb_catinventory.category_name,tb_inventory.lokasi_penyimpanan,tb_inventory.id as assetid from  tb_inventory join tb_catinventory on tb_catinventory.id=tb_inventory.kategori WHERE tb_inventory.id=$idEdit";
+	$sql = "SELECT tb_inventory.id,tb_inventory.kode_rfid,tb_inventory.nama_aset,tb_catinventory.category_name,tb_inventory.lokasi_penyimpanan,tb_catinventory.id as assetid from  tb_inventory join tb_catinventory on tb_catinventory.id=tb_inventory.kategori WHERE tb_inventory.id=$idEdit";
 	$query = $dbh -> prepare($sql);
 	$query->execute();
     $results=$query->fetchAll(PDO::FETCH_OBJ);

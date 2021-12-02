@@ -18,9 +18,9 @@
                                     <th>No</th>
                                     <th>NAMA ALAT</th>
 									<th>JUMLAH</th>
-                                    <!-- <th>TEMPAT</th> -->
+                                    <!-- <th>TEMPAT</th>
                                     <th>TERPAKAI</th>
-                                    <th>TERSEDIA</th>
+                                    <th>TERSEDIA</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,8 +39,6 @@
                                     <td><?php echo $cnt;?></td>		
                                     <td><?php echo htmlentities($result->nama_aset);?></td>
                                     <td><?php echo htmlentities($result->total);?></td>
-                                    <td><?php echo htmlentities($result->terpakai);?></td>
-                                    <td><?php echo htmlentities($result->tersedia);?></td>				
                                 </tr>
                                 <?php $cnt=$cnt+1; }}?>
                             </tbody>

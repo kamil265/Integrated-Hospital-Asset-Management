@@ -11,7 +11,7 @@
                 </button>
             </div>
         <div class="modal-body">
-            <form action="addInventory.php" method="POST" id="formAddAset" >
+            <form action="addInventory.php" method="POST" id="formAddAset" onsubmit="uidAset()" >
                 <div>                    
                     <section>
                         <div class="row">
@@ -188,7 +188,7 @@
                 </button>
             </div>
         <div class="modal-body">
-            <form action="peminjamanAsset.php" method="POST"  class="step-form-horizontal">
+            <form action="peminjamanAsset.php" method="POST" id="formAddpj" onsubmit="uidPj()"  class="step-form-horizontal">
                 <div>                    
                     <section>
                         <div class="row">
@@ -196,7 +196,7 @@
                                 <label class="text-label" >UID PENANGGUNGJAWAB</label>
                                     <div class="input-group mb-3">
                                         <div class="form-control">
-                                            <span class="valueUIDaset" id="get_uidAset">
+                                            <span class="valueUIDpj" id="get_uidPj">
                                                 Tap Kartu kemudian tekan tombol scan
                                             </span>
                                         </div>

@@ -32,9 +32,18 @@ function uidKaryawan(){
 }
 function uidAset(){
 
-    uid_karyawan = $('.valueUIDaset').html();
+    uid_aset = $('.valueUIDaset').html();
 
     $("#uid_aset").val(uid_aset);
 
     $("#formAddAset").submit();
+}
+
+function uidPj(){
+
+    uid_pj = $('.valueUIDpj').html();
+
+    $("#uid_penanggungjawab").val(uid_pj);
+
+    $("#formAddpj").submit();
 }

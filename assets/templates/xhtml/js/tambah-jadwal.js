@@ -29,22 +29,7 @@ function getAsset()
             error:function (){}
         });
     }
-    
-function getPerawat(){
-    $("#loaderIcon").show();
-    jQuery.ajax(
-    {
-        url: "getPerawat.php",
-        data:'nama_jadwalper='+$("#nama_jadwalper").val(),
-        type: "POST",
-        success:function(data)
-        {
-            $("#get_data_perawat").html(data);
-            $("#loaderIcon").hide();
-        },
-            error:function (){}
-        }); 
-}
+
 function getKaryawan() {
     $("#loaderIcon").show();
     jQuery.ajax(
@@ -59,5 +44,20 @@ function getKaryawan() {
         },
             error:function (){}
         }); 
-    }
-    
+}
+ 
+function getJadwalPerawat(){
+    $("#loaderIcon").show();
+    jQuery.ajax(
+    {
+        url: "getJadwalPerawat.php",
+        data:'nama_jadwalper='+$("#nama_jadwalper").val(),
+        type: "POST",
+        success:function(data)
+        {
+            $("#get_data_perawat").html(data);
+            $("#loaderIcon").hide();
+        },
+            error:function (){}
+        }); 
+}

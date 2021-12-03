@@ -443,7 +443,7 @@ include 'connect.php';
                                     <label class="text-label">UID Pasien</label>
                                     <div class="input-group mb-3">
                                         <div class="form-control">
-                                            <span class="valueUIDpasien" id="get_uidPas">
+                                            <span onclick="getPemindahanPasien();" class="valueUIDpasien" id="get_uidPas">
                                             Tap Kartu kemudian tekan tombol scan
                                             </span>
                                         </div>

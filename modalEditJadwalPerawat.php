@@ -27,8 +27,8 @@
                         <div class="row">
                         	<div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">UID Dokter</label>
-                                    <input type="text" name="uid_jadwalprwt" id="uid_jadwalprwt" disabled value="<?php echo htmlentities($result->perawat_id);?>" class="form-control" required>
+                                    <label class="text-label">UID Perawat</label>
+                                    <input type="text" name="uid_jadwalper" id="uid_jadwalper" disabled value="<?php echo htmlentities($result->perawat_id);?>" class="form-control" required>
                                 </div>
 								<div class="form-group">
                                     <span id="get_data_perawat" style="font-size:16px;"></span> 
@@ -48,6 +48,12 @@
                                     </select>
                                 </div>
 							</div> -->
+                            <div class="col-12">
+								<div class="form-group">
+                                	<label>Tanggal Praktik</label>
+                                    <input type="date" name="tanggal_praktik" class="form-control" value="<?php echo htmlentities($result->hari_praktik);?>">>
+                                </div>
+							</div>
 							<div class="col-lg-6 mb-4">
                                 <label>Jam Mulai Praktik</label>
                                 <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
@@ -65,7 +71,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger light" data-dismiss="modal">Batal</button>
-                    <button type="submit" name="updatejadwalperawat" class="btn btn-primary">Tambah</button>
+                    <button type="submit" name="updateJadwalPerawat" class="btn btn-primary">Tambah</button>
                 </div>
             </form>
         </div>

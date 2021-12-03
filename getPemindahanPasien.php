@@ -13,12 +13,9 @@
         {
             foreach ($results as $result) {
                 ?>
-                    <input type="hidden" name="uid_pemindahanpasien" class="form-control" value="<?php echo htmlentities($result->kode_rfid);?>" required>  <br>  
-<<<<<<< Updated upstream
-=======
+                    <input type="text" name="uid_pemindahanpasien" class="form-control" value="<?php echo htmlentities($result->kode_rfid);?>" required>  <br>  
                     <label>Nama Pasien</label><br>
-                    <input type="text" name="nama" class="form-control" value="<?php echo htmlentities($result->nama);?> " readonly required>  <br>
->>>>>>> Stashed changes
+                    <input type="text" name="nama" class="form-control" value="<?php echo htmlentities($result->nama);?> " readonly required>  <br> 
                     <label>Diagnosa</label><br>
                     <input type="text" name="diagnosa" class="form-control" value="<?php echo htmlentities($result->diagnosa);?> " readonly required>  <br>   
                     <hr>            

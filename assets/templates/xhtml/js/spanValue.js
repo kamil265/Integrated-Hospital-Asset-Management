@@ -38,16 +38,6 @@ function uidAset(){
 
     $("#formAddAset").submit();
 }
-<<<<<<< Updated upstream
-
-function uidPj(){
-
-    uid_pj = $('.valueUIDpj').html();
-
-    $("#uid_penanggungjawab").val(uid_pj);
-
-    $("#formAddpj").submit();
-=======
 function uidPemindahanPasien(){
 
     uid_pemindahanpasien = $('.valueUIDpemindahanpasien').html();
@@ -55,5 +45,4 @@ function uidPemindahanPasien(){
     $("#uid_pemindahanpasien").val(uid_pemindahanpasien);
 
     $("#formAddPemindahanPasien").submit();
->>>>>>> Stashed changes
 }

@@ -422,34 +422,42 @@ include 'connect.php';
             Pemindahan Pasien
     ***********************************-->
 
+    <script src="<?=templates()?>js/tambah-pemindahanpasien.js"></script>
 
-    <div class="modal fade modal-tambah-pemindahanpasien" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="modal fade modal-tambah-pemindahanpasien" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Tambah Pemindahan Pasien</h3>
+                <h3 class="modal-title">Pemindahan Pasien</h3>
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                 </button>
             </div>
         <div class="modal-body">
-            <form action="addPemindahanPasien.php" method="POST" id="formAddPemindahanPasien" onsubmit="uidPemindahanPasien()">
+            <form action="addPemindahanPasien.php" method="POST"  class="step-form-horizontal">
                 <div>                    
                     <section>
                         <div class="row">
-                        <div class="col-lg-12 mb-2">
+                        	<div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">UID</label>
+                                    <label class="text-label">UID Pasien</label>
                                     <div class="input-group mb-3">
-                                    <div class="form-control">
-                                            <span class="valueUIDpemindahanpasien" id="get_uidPemindahanPasien">
-                                                Tap Kartu kemudian tekan tombol scan
+                                        <div class="form-control">
+                                            <span class="valueUIDpasien" id="get_uidPas">
+                                            Tap Kartu kemudian tekan tombol scan
                                             </span>
                                         </div>
-                                    <input type="hidden" name="uid_pemindahanpasien" id="uid_pemindahanpasien" class="form-control" required>
-                                            <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID()" >Scan</button>
-                                            </div>
-                                    </div>
+                                    <input type="text" name="uid_pemindahanpasien" id="uid_pemindahanpasien" onblur="getPemindahanPasien()" class="form-control" required>
+                                        <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID()" >Scan</button>
+                                        </div>
+                                </div>
+								<div class="form-group">
+                                    <span id="get_data_pemindahanpasien" style="font-size:16px;"></span> 
+                                </div>
+                                <div id="resultPemindahanPasien"></div>
+                                <div class="form-group">
+                                    <span id="get_data_pemindahanpasien"></span> 
                                 </div>
                             </div>
                             <div class="col-lg-12 mb-3">
@@ -477,16 +485,7 @@ include 'connect.php';
         </div>
     </div>
 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger light" data-dismiss="modal">Batal</button>
-                    <button type="submit" name="tambahPemindahanPasien" class="btn btn-primary">Tambah</button>
-                </div>
-            </form>
-        </div>
-            
-        </div>
-    </div>
-</div>
+
 <div id="modalEditJadwal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div>
 <div id="modalEditJadwalPerawat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

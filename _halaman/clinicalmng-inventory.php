@@ -196,7 +196,7 @@
                                 <label class="text-label" >UID PENANGGUNGJAWAB</label>
                                     <div class="input-group mb-3">
                                         <div class="form-control">
-                                            <span class="valueUIDpj" id="get_uidPj">
+                                            <span class="valueUIDpj" id="get_uidPj" onkeypress="getUser()">
                                                 Tap Kartu kemudian tekan tombol scan
                                             </span>
                                         </div>

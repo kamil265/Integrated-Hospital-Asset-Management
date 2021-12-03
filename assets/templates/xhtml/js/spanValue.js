@@ -46,3 +46,12 @@ function uidPemindahanPasien(){
 
     $("#formAddPemindahanPasien").submit();
 }
+
+function uidPj(){
+
+    uid_pj = $('.valueUIDpj').html();
+
+    $("#uid_penanggungjawab").val(uid_pj);
+
+    $("#formAddpj").submit();
+}

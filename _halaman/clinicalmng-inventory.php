@@ -1,6 +1,7 @@
 <?php
  $title="Clinical Management - Inventory";
 ?>
+	<script src="<?=templates()?>js/pindah-aset.js"></script>
 
 <div class="modal fade modal-tambah-aset" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -195,8 +196,8 @@
                         	<div class="col-lg-12 mb-2">
                                 <label class="text-label" >UID PENANGGUNGJAWAB</label>
                                     <div class="input-group mb-3">
-                                        <div class="form-control">
-                                            <span class="valueUIDpj" id="get_uidPj" onclick="getUser()">
+                                        <div class="form-control" onclick="getUser()">
+                                            <span class="valueUIDpj" id="get_uidPj">
                                                 Tap Kartu kemudian tekan tombol scan
                                             </span>
                                         </div>
@@ -218,7 +219,7 @@
                             <div class="form-group">
                                 <label class="text-label" >Nama Aset</label>
                                 <div class="input-group mb-3">
-                                    <input type="text" name="nama_aset" id="nama_aset" class="form-control" onblur="getAsset()" required>
+                                    <input type="text" name="nama_aset" id="nama_aset" class="form-control" onkeydown="getAsset()" required>
                                 </div>
                                 <div id="resultAset"></div>
                                 <div class="form-group">
@@ -383,7 +384,7 @@
                             </thead>
                             <tbody>
 							<?php 
-								$sql = "SELECT tb_inventory.id,tb_inventory.kode_rfid,tb_inventory.nama_aset,tb_catinventory.category_name,tb_inventory.lokasi_penyimpanan,tb_inventory.id as assetid from  tb_inventory join tb_catinventory on tb_catinventory.id=tb_inventory.kategori";
+								$sql = "SELECT*FROM view_asset";
 								$query = $dbh -> prepare($sql);
 								$query->execute();
 								$results=$query->fetchAll(PDO::FETCH_OBJ);

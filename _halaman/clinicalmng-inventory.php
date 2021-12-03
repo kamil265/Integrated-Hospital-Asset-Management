@@ -196,10 +196,11 @@
                                 <label class="text-label" >UID PENANGGUNGJAWAB</label>
                                     <div class="input-group mb-3">
                                         <div class="form-control">
-                                            <span class="valueUIDpj" id="get_uidPj" onkeypress="getUser()">
+                                            <span class="valueUIDpj" id="get_uidPj" onclick="getUser()">
                                                 Tap Kartu kemudian tekan tombol scan
                                             </span>
                                         </div>
+                                        <span id="get_user_name" style="font-size:16px; "></span> 
                                         <input type="hidden" name="uid_penanggungjawab" id="uid_penanggungjawab" class="form-control" required>
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID()" >Scan</button>

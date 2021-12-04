@@ -10,5 +10,5 @@ function getUID(){
 }
 
 function show(data) {
-    $("#get_uidPas,#get_uidDok,#get_uidPerawat,#get_uidKar,#get_uidAset,#get_uidPj,#get_uidPemindahanPasien").html(data[0].rfid_uid);
+    $("#get_uidPas,#get_uidDok,#get_uidPerawat,#get_uidKar,#get_uidAset,#get_uidPj").html(data[0].rfid_uid);
   }

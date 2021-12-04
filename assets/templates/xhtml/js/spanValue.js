@@ -53,5 +53,10 @@ function uidPj(){
 
     $("#uid_penanggungjawab").val(uid_pj);
 
+    uid_pinjamAset = $('.valueUIDpinjam').html();
+
+    $("#uid_pinjamaset").val(uid_pinjamAset);
+
     $("#formAddpj").submit();
+
 }

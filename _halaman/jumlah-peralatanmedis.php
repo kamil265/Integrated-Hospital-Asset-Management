@@ -18,14 +18,13 @@
                                     <th>No</th>
                                     <th>NAMA ALAT</th>
 									<th>JUMLAH</th>
-                                    <!-- <th>TEMPAT</th>
                                     <th>TERPAKAI</th>
-                                    <th>TERSEDIA</th> -->
+                                    <th>TERSEDIA</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-									$sql = "SELECT*FROM view_jumlahaset;";
+									$sql = "SELECT*FROM view_jumlahAsetNew;";
 									$query = $dbh -> prepare($sql);
 									$query->execute();
 									$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -39,6 +38,8 @@
                                     <td><?php echo $cnt;?></td>		
                                     <td><?php echo htmlentities($result->nama_aset);?></td>
                                     <td><?php echo htmlentities($result->total);?></td>
+                                    <td><?php echo htmlentities($result->terpakai);?></td>
+                                    <td><?php echo htmlentities($result->tersedia);?></td>
                                 </tr>
                                 <?php $cnt=$cnt+1; }}?>
                             </tbody>

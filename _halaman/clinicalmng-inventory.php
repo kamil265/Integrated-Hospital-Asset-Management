@@ -219,7 +219,7 @@
                             <div class="form-group">
                                 <label class="text-label" >Nama Aset</label>
                                 <div class="input-group mb-3">
-                                    <input type="text" name="nama_aset" id="nama_aset" class="form-control" onkeydown="getAsset()" required>
+                                    <input type="text" name="nama_aset" id="nama_aset" class="form-control" onblur="getAsset()" required>
                                 </div>
                                 <div id="resultAset"></div>
                                 <div class="form-group">
@@ -384,7 +384,7 @@
                             </thead>
                             <tbody>
 							<?php 
-								$sql = "SELECT*FROM view_asset";
+								$sql = "SELECT tb_inventory.id,tb_inventory.kode_rfid,tb_inventory.nama_aset,tb_catinventory.category_name,tb_inventory.lokasi_penyimpanan,tb_inventory.id as assetid from  tb_inventory join tb_catinventory on tb_catinventory.id=tb_inventory.kategori";
 								$query = $dbh -> prepare($sql);
 								$query->execute();
 								$results=$query->fetchAll(PDO::FETCH_OBJ);

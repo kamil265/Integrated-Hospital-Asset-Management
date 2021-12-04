@@ -290,6 +290,7 @@
                                     <input type="text" name="perawat_nama" class="form-control"  required>
                                 </div>
                             </div>
+                            
                             <div class="col-lg-12 mb-2">
                                 <div class="form-group ">
                                     <label class="text-label">Jenis Kelamin</label>
@@ -304,6 +305,12 @@
                                 <div class="form-group">
                                     <label class="text-label">Alamat</label>
                                     <input type="text" name="perawat_alamat" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mb-2">
+                                <div class="form-group">
+                                    <label class="text-label">Divisi Perawat</label>
+                                    <input type="text" name="perawat_divisi" class="form-control"  required>
                                 </div>
                             </div>
                             <div class="col-lg-12 mb-3">

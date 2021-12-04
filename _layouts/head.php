@@ -16,8 +16,11 @@
     <link href="<?=templates()?>vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 
         <!-- Form step -->
-        <!-- <link href="<?=templates()?>vendor/jquery-steps/css/jquery.steps.css" rel="stylesheet"> -->
 
     <script src="https://kit.fontawesome.com/f4559b5252.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="<?=templates()?>vendor/toastr/css/toastr.min.css">
+
+
 
 </head>

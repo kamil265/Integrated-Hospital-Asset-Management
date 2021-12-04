@@ -97,6 +97,9 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="<?=templates()?>vendor/toastr/js/toastr.min.js"></script>
+
+    <script src="<?=templates()?>js/plugins-init/toastr-init.js"></script>
 
 
 

@@ -4,7 +4,7 @@
   if(isset($_POST["query"])){
     $output = '';
     $keywords = "%".$_POST["query"]."%";
-    $sql = "SELECT * FROM tb_inventory WHERE nama_aset LIKE :keywords LIMIT 10";
+    $sql = "SELECT * FROM tb_inventory WHERE nama_aset LIKE :keywords AND status=1 LIMIT 10";
     $query= $dbh -> prepare($sql);
     $query-> bindParam('keywords', $keywords, PDO::PARAM_STR);
     $query-> execute();

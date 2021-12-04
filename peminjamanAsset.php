@@ -12,11 +12,12 @@
         {
             $uidPenanggungJawab=strtoupper($_POST['uid_penanggungjawab']);
             $uidPinjamAset=$_POST['uid_pinjamaset'];
-            $sql="INSERT INTO  tb_pinjaminventory (asset_id,id_penanggungjawab) VALUES(:uidPinjamAset,:uidPenanggungJawab)";
-            $query = $dbh->prepare($sql);
+            $insert="INSERT INTO  tb_pinjaminventory (asset_id,id_penanggungjawab) VALUES(:uidPinjamAset,:uidPenanggungJawab)";
+            $query = $dbh->prepare($insert);
             $query->bindParam(':uidPenanggungJawab',$uidPenanggungJawab,PDO::PARAM_STR);
             $query->bindParam(':uidPinjamAset',$uidPinjamAset,PDO::PARAM_STR);
             $query->execute();
+        
             $lastInsertId = $dbh->lastInsertId();
             if($lastInsertId)
             {
@@ -26,6 +27,13 @@
             {
                 header('location:index.php');
             }
+            $uidPinjamAset=$_POST['uid_pinjamaset'];
+            $stts=0;
+            $update="UPDATE tb_inventory set status=:stts where kode_rfid=:uidPinjamAset";
+            $upquery = $dbh->prepare($update);
+            $upquery->bindParam(':stts',$stts,PDO::PARAM_STR);
+            $upquery->bindParam(':uidPinjamAset',$uidPinjamAset,PDO::PARAM_STR);
+            $upquery->execute();
         }
     }
 ?>

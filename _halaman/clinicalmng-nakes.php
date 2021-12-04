@@ -245,8 +245,7 @@
 </div>
 <div id="modalEditKaryawan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div>
-<div class="container-fluid">
-	<div class="row">
+
 		<div class="col-12">
         	<div class="card" id="jadwalPerawat">
 				<div class="card-header">
@@ -349,6 +348,11 @@
                 </div>
             </div>
         </div>
+
+<!--**********************************
+    Tambah Jadwal Karyawan Modifikasi
+    ***********************************-->
+
     <div class="modal fade modal-tambah-jadwalkaryawan" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -358,72 +362,78 @@
                 </button>
             </div>
         <div class="modal-body">
-            <form action="addJadwalKaryawan.php" method="POST"  class="step-form-horizontal">
+            <form action="addJadwalKaryawan.php" method="POST" >
                 <div>                    
-                    <section>
-                        <div class="row">
-                        	<div class="col-lg-12 mb-2">
-                                <div class="form-group">
-                                    <label class="text-label">UID Karyawan</label>
-                                    <input type="text" name="uid_jadwalkar" id="uid_jadwalkar" onblur="getKaryawan()" class="form-control" required>
+                    <div class="row">
+                        <div class="col-lg-12 mb-2">
+                            <div class="form-group">
+                                <label class="text-label" >Nama Karyawan</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" name="nama_jadwalkar" id="nama_jadwalkar" class="form-control" onblur="getJadwalKaryawan()" required>
                                 </div>
-								<div class="form-group">
-                                    <span id="get_data_karyawan" style="font-size:16px;"></span> 
+                                <div id="resultNamaKaryawan"></div>
+                                <div class="form-group">
+                                    <span id="get_data_karyawan"></span> 
                                 </div>
                             </div>
-							<div class="col-12">
-								<div class="form-group">
-                                	<label>Hari Kerja</label>
-                                    <select class="form-control" id="sel2" name="hari_kerja">
-                                        <option>Senin</option>
-                                        <option>Selasa</option>
-                                        <option>Rabu</option>
-                                        <option>Kamis</option>
-                                        <option>Jumat</option>
-										<option>Sabtu</option>
-                                        <option>Minggu</option>
-                                    </select>
-                                </div>
-							</div>
-							<div class="col-lg-6 mb-4">
-                                <label>Jam Mulai Kerja</label>
-                                <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
-                                    <input type="text" name="jam_mulai" class="form-control" value="00:00"> <span class="input-group-append"><span class="input-group-text"><iclass="fa fa-clock-o"></i></span></span>
-                                </div>
-                        	</div>
-							<div class="col-lg-6 mb-4">
-                                <label>Jam Selesai Kerja</label>
-                                <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
-                                    <input type="text" name="jam_selesai" class="form-control" value="00:00"> <span class="input-group-append"><span class="input-group-text"><iclass="fa fa-clock-o"></i></span></span>
-                                </div>
-                        	</div>
+                        </div>
+						<div class="col-12">
+							<div class="form-group">
+                                <label>Tanggal Kerja</label>
+                                <input type="date" name="tanggal_kerja" class="form-control">
+                            </div>
 						</div>
-                    </section>
+						<div class="col-lg-6 mb-4">
+                            <label>Jam Mulai Kerja</label>
+                            <div class="input-group">
+                                <input type="time" name="jam_mulai" class="form-control" value="00:00"> 
+                            </div>
+                        </div>
+						<div class="col-lg-6 mb-4">
+                            <label>Jam Selesai Kerja</label>
+                            <div class="input-group" >
+                                <input type="time" name="jam_selesai" class="form-control" value="00:00"> 
+                            </div>
+                        </div>
+					</div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger light" data-dismiss="modal">Batal</button>
-                    <button type="submit" name="tambahJadwal" class="btn btn-primary">Tambah</button>
+                    <button type="submit" name="tambahJadwalKaryawan" class="btn btn-primary">Tambah</button>
                 </div>
             </form>
-        </div>
-            
-        </div>
+        </div>    
     </div>
+</div>
+</div>
+<div id="modalEditJadwal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalEditJadwalPerawat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalEditJadwalKaryawan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalEditDokter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalEditPerawat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalEditKaryawan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div>
 
 		<div class="col-12">
         	<div class="card" id="jadwalKaryawan">
 				<div class="card-header">
 				<h4 class="card-intro-title">Jadwal Karyawan Hari ini</h4>
+						<!-- <button class="btn btn-primary btn-xs mr-0"></button> -->
 					<span>
 						<button onclick="openFullscreen();" class="btn btn-primary btn-xs"><i class="fa fa-expand" aria-hidden="true"></i></button>
 					</span>
+
 				</div>
                 <div class="card-body p-4">
 					<div class="table-responsive p-4 ">
                         <table class="table patient-activity">
 							<?php 
-								$sql = "SELECT * FROM view_jadwalkaryawan WHERE jadwalid!=''";
+								$sql = "SELECT * FROM view_jadwalkaryawan WHERE jadwalid!='' AND hari_kerja=CURRENT_DATE()";
 								$query = $dbh -> prepare($sql);
 								$query->execute();
 								$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -438,7 +448,7 @@
                                     <div class="media align-items-center">
                                         <div class="media-body">
                                             <h5 class="mt-0 mb-1"><?php echo htmlentities($result->nama_karyawan);?></h5>
-											<p class="mb-0"><?php echo htmlentities($result->spesialis);?></p>
+											<p class="mb-0"><?php echo htmlentities($result->divisi_karyawan);?></p>
                                         </div>
                                     </div>
                                 </td>
@@ -457,7 +467,7 @@
            		</div>
         	</div>
 		</div>
-        <div class="col-12">
+		<div class="col-12">
         	<div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Jadwal Karyawan</h4>
@@ -472,8 +482,9 @@
                                 <tr>
                                 	<th>No</th>    
                                     <th>Nama Karyawan</th>
-									<th>Spesialisasi</th>
-                                    <th>Jam Kerja</th>       
+									<th>Divisi</th>
+                                    <th>Tanggal</th>       
+                                    <th>Jam Praktik</th>       
                                     <th>Action</th>                         
 								</tr>
                             </thead>
@@ -492,7 +503,8 @@
                             	<tr>
 									<td><?php echo $cnt;?></td>
                                     <td><?php echo htmlentities($result->nama_karyawan);?></td>
-                                    <td><?php echo htmlentities($result->spesialis);?></td>
+                                    <td><?php echo htmlentities($result->divisi_karyawan);?></td>
+                                    <td><?php echo htmlentities($result->hari_kerja);?></td>
 									<td><?php echo htmlentities($result->jam_mulai);?> - <?php echo htmlentities($result->jam_selesai);?>  </td>
                                     <td>
 										<div class="d-flex">
@@ -509,6 +521,10 @@
                 </div>
             </div>
         </div>
+                                
+
+		
+        
 <script>
 var elem = document.getElementById("jadwalDokter");
 function openFullscreen() {
@@ -521,4 +537,42 @@ function openFullscreen() {
   }
 }
 </script>
-    
+
+<script>
+var elem = document.getElementById("jadwalPerawat");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+</script>
+
+<script>
+var elem = document.getElementById("jadwalKaryawan");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+</script>
+
+<script>
+var elem = document.getElementById("jadwalPerawat");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+</script>

@@ -35,7 +35,7 @@ function getKaryawan() {
     jQuery.ajax(
     {
         url: "getKaryawan.php",
-        data:'uid_jadwalkar='+$("#uid_jadwalkar").val(),
+        data:'nama_jadwalkar='+$("#nama_jadwalkar").val(),
         type: "POST",
         success:function(data)
         {
@@ -56,6 +56,22 @@ function getJadwalPerawat(){
         success:function(data)
         {
             $("#get_data_perawat").html(data);
+            $("#loaderIcon").hide();
+        },
+            error:function (){}
+        }); 
+}
+
+function getJadwalKaryawan(){
+    $("#loaderIcon").show();
+    jQuery.ajax(
+    {
+        url: "getJadwalKaryawan.php",
+        data:'nama_jadwalkar='+$("#nama_jadwalkar").val(),
+        type: "POST",
+        success:function(data)
+        {
+            $("#get_data_karyawan").html(data);
             $("#loaderIcon").hide();
         },
             error:function (){}

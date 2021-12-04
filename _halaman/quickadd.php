@@ -202,8 +202,8 @@
                                     <label class="text-label">Jenis Kelamin</label>
                                     <select class="form-control" name="dr_jk">
                                         <option>Pilih Jenis Kelamin</option>
-                                        <option>Pria</option>
-                                        <option>Wanita</option>
+                                        <option>Laki-Laki</option>
+                                        <option>Perempuan</option>
                                     </select>
                                 </div>
                             </div>
@@ -295,8 +295,8 @@
                                     <label class="text-label">Jenis Kelamin</label>
                                     <select class="form-control" name="perawat_jk">
                                         <option>Pilih Jenis Kelamin</option>
-                                        <option>Pria</option>
-                                        <option>Wanita</option>
+                                        <option>Laki-Laki</option>
+                                        <option>Perempuan</option>
                                     </select>
                                 </div>
                             </div>
@@ -376,8 +376,8 @@
                                     <label class="text-label">Jenis Kelamin</label>
                                     <select class="form-control" name="karyawan_jk">
                                         <option>Pilih Jenis Kelamin</option>
-                                        <option>Pria</option>
-                                        <option>Wanita</option>
+                                        <option>Laki-Laki</option>
+                                        <option>Perempuan</option>
                                     </select>
                                 </div>
                             </div>

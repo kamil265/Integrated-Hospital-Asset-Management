@@ -1,17 +1,17 @@
 <?php
     session_start();
     error_reporting(0);
-    include'connect.php';
+    include 'connect.php';
     if(strlen($_SESSION['alogin'])==0)
     {   
         header('location:login.php');
     }
     else
     { 
-        if(isset($_POST['tambahJadwal']))
+        if(isset($_POST['tambahJadwalKaryawan']))
         {
             $uidKaryawan=$_POST['uid_jadwalkar'];
-            $hariKerja=$_POST['hari_kerja'];
+            $hariKerja=$_POST['tanggal_kerja'];
             $jamMulai=$_POST['jam_mulai'];
             $jamSelesai=$_POST['jam_selesai'];
             $sql="INSERT INTO  tb_jadwalkaryawan (karyawan_id,hari_kerja,jam_mulai,jam_selesai) VALUES(:uidKaryawan,:hariKerja,:jamMulai,:jamSelesai)";

@@ -87,6 +87,7 @@
     <script src="<?=templates()?>js/searchAset.js"></script>
     <script src="<?=templates()?>js/tambah-jadwal.js"></script>
     <script src="<?=templates()?>js/tambah-jadwalperawat.js"></script>
+    <script src="<?=templates()?>js/tambah-jadwalkaryawan.js"></script>
 
 
     <script src="<?=templates()?>js/getIDPasien.js"></script>

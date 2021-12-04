@@ -422,7 +422,7 @@ include 'connect.php';
             Pemindahan Pasien
     ***********************************-->
 
-    <script src="<?=templates()?>js/tambah-pemindahanpasien.js"></script>
+<script src="<?=templates()?>js/tambah-pemindahanpasien.js"></script>
 
 
 <div class="modal fade modal-tambah-pemindahanpasien" tabindex="-1" role="dialog" aria-hidden="true">
@@ -441,16 +441,7 @@ include 'connect.php';
                         	<div class="col-lg-12 mb-2">
                                 <div class="form-group">
                                     <label class="text-label">UID Pasien</label>
-                                    <div class="input-group mb-3">
-                                        <div class="form-control">
-                                            <span onclick="getPemindahanPasien();" class="valueUIDpasien" id="get_uidPas">
-                                            Tap Kartu kemudian tekan tombol scan
-                                            </span>
-                                        </div>
                                     <input type="text" name="uid_pemindahanpasien" id="uid_pemindahanpasien" onblur="getPemindahanPasien()" class="form-control" required>
-                                        <div class="input-group-append">
-                                                <button class="btn btn-primary" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID()" >Scan</button>
-                                        </div>
                                 </div>
 								<div class="form-group">
                                     <span id="get_data_pemindahanpasien" style="font-size:16px;"></span> 

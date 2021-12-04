@@ -1,13 +1,13 @@
-function getPemindahanPasien() {
+function getJadwalKaryawan() {
     $("#loaderIcon").show();
     jQuery.ajax(
     {
-        url: "getPemindahanPasien.php",
-        data:'uid_pemindahanpasien='+$("#uid_pemindahanpasien").val(),
+        url: "getJadwalKaryawan.php",
+        data:'nama_jadwalkar='+$("#nama_jadwalkar").val(),
         type: "POST",
         success:function(data)
         {
-            $("#get_data_pemindahanpasien").html(data);
+            $("#get_data_karyawan").html(data);
             $("#loaderIcon").hide();
         },
             error:function (){}

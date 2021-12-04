@@ -3,7 +3,7 @@
     if(!empty($_POST["nama_jadwaldok"])) 
     {
         $uidJadwalDokter= ($_POST["nama_jadwaldok"]);
-        $sql ="SELECT rfid_uid,nama_dokter, spesialis FROM tb_dokter WHERE nama_dokter=:nama_jadwaldok AND status=1";
+        $sql ="SELECT rfid_uid,nama_dokter, spesialis FROM tb_dokter WHERE nama_dokter=:nama_jadwaldok";
         $query= $dbh -> prepare($sql);
         $query-> bindParam(':nama_jadwaldok', $uidJadwalDokter, PDO::PARAM_STR);
         $query-> execute();

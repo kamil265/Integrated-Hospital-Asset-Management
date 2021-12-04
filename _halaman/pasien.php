@@ -137,6 +137,7 @@
                                                             <th><strong>RFID UID</strong></th>                                                
                                                             <th><strong>TANGGAL MASUK</strong></th>
                                                             <th><strong>NAMA PASIEN</strong></th>
+                                                            <th><strong>JENIS KELAMIN</strong></th>
                                                             <th><strong>PENANGGUNG JAWAB</strong></th>
                                                             <th><strong>NIK</strong></th>
                                                             <th><strong>TANGGAL LAHIR</strong></th>
@@ -165,6 +166,7 @@
                                                             <td><?php echo htmlentities($result->kode_rfid);?></td>                                                
                                                             <td><?php echo htmlentities($result->tanggal_masuk);?></td>
                                                             <td><?php echo htmlentities($result->nama);?></td>
+                                                            <td><?php echo htmlentities($result->jeniskelamin_pasien);?></td>
                                                             <td><?php echo htmlentities($result->Penanggungjawab);?></td>
                                                             <td><?php echo htmlentities($result->nik);?></td>
                                                             <td><?php echo htmlentities($result->tanggal_lahir);?></td>
@@ -197,6 +199,7 @@
 												<th><strong>RFID UID</strong></th>                                                
                                                 <th><strong>TANGGAL MASUK</strong></th>
                                                 <th><strong>NAMA PASIEN</strong></th>
+                                                <th><strong>JENIS KELAMIN</strong></th>
                                                 <th><strong>PENANGGUNG JAWAB</strong></th>
                                                 <th><strong>NIK</strong></th>
                                                 <th><strong>TANGGAL LAHIR</strong></th>
@@ -226,6 +229,7 @@
                                             <td><?php echo htmlentities($result->kode_rfid);?></td>                                                
                                             <td><?php echo htmlentities($result->tanggal_masuk);?></td>
                                             <td><?php echo htmlentities($result->nama);?></td>
+                                            <td><?php echo htmlentities($result->jeniskelamin_pasien);?></td>
                                             <td><?php echo htmlentities($result->Penanggungjawab);?></td>
                                             <td><?php echo htmlentities($result->nik);?></td>
                                             <td><?php echo htmlentities($result->tanggal_lahir);?></td>
@@ -258,6 +262,7 @@
 												<th><strong>RFID UID</strong></th>                                                
                                                 <th><strong>TANGGAL MASUK</strong></th>
                                                 <th><strong>NAMA PASIEN</strong></th>
+                                                <th><strong>JENIS KELAMIN</strong></th>
                                                 <th><strong>NIK</strong></th>
                                                 <th><strong>TANGGAL LAHIR</strong></th>
 												<th><strong>ALAMAT</strong></th>
@@ -286,6 +291,7 @@
 												<td><?php echo htmlentities($result->kode_rfid);?></td>                                                
 												<td><?php echo htmlentities($result->tanggal_masuk);?></td>
 												<td><?php echo htmlentities($result->nama);?></td>
+                                                <td><?php echo htmlentities($result->jeniskelamin_pasien);?></td>
 												<td><?php echo htmlentities($result->nik);?></td>
 												<td><?php echo htmlentities($result->tanggal_lahir);?></td>
 												<td><?php echo htmlentities($result->alamat);?></td>

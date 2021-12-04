@@ -1,11 +1,11 @@
 <?php 
     require_once("connect.php");
-    if(!empty($_POST["uid_jadwalkar"])) 
+    if(!empty($_POST["nama_jadwalkar"])) 
     {
-        $uidJadwalKaryawan= strtoupper($_POST["uid_jadwalkar"]);
-        $sql ="SELECT nama_karyawan, divisi_karyawan FROM tb_karyawan WHERE kode_rfid=:uid_jadwalkar";
+        $uidJadwalKaryawan= ($_POST["nama_jadwalkar"]);
+        $sql ="SELECT kode_rfid,nama_karyawan, divisi_karyawan FROM tb_karyawan WHERE nama_karyawan=:nama_jadwalkar AND status=1";
         $query= $dbh -> prepare($sql);
-        $query-> bindParam(':uid_jadwalkar', $uidJadwalKaryawan, PDO::PARAM_STR);
+        $query-> bindParam(':nama_jadwalkar', $uidJadwalKaryawan, PDO::PARAM_STR);
         $query-> execute();
         $results = $query -> fetchAll(PDO::FETCH_OBJ);
         $cnt=1;

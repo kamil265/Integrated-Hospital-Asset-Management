@@ -14,3 +14,8 @@ function getUser() {
         }); 
     }
 
+
+    $('.getDetailPj').on('click', function() {
+        var $val = $('#get_uidPj').html();
+        $('#showuid').text($val);
+    });     

@@ -205,8 +205,11 @@
                                         <input type="hidden" name="uid_penanggungjawab" id="uid_penanggungjawab" class="form-control" required>
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary" type="button" name="btnGetUid" id="removeButton"  >Scan</button>
+                                                <button class="btn btn-success dtl-pj" type="button" name="btnGetDetailPj" id="getDetailPj"  >Detail</button>
                                             </div>
                                     </div>
+                                    <span id="showDetailPj" style="font-size:16px;"></span> 
+
                             </div>
                             <div class="col-lg-12 mb-2">
                                 <label class="text-label" >UID ASET</label>
@@ -220,8 +223,11 @@
                                         <input type="hidden" name="uid_pinjamaset" id="uid_pinjamaset" class="form-control" required>
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary" type="button" name="btnGetUid" id="addButton"  >Scan</button>
+                                                <button class="btn btn-success dtl-asset" type="button" name="btnGetDetailAsset" id="getDetailAsset" onclick="getUser()"  >Detail</button>
                                             </div>
                                     </div>
+                                    <span id="showDetailAsset" style="font-size:16px;"></span> 
+
                             </div>
 							<!-- <div class="col-lg-12 mb-2">
                                 <div class="form-group">

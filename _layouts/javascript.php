@@ -94,6 +94,9 @@
     <script src="<?=templates()?>js/getIDdok.js"></script>
     <script src="<?=templates()?>js/getUID.js"></script>
     <script src="<?=templates()?>js/uidAddAsset.js"></script>
+    <script src="<?=templates()?>js/getDetailPj.js"></script>
+    <script src="<?=templates()?>js/getDetailAsset.js"></script>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

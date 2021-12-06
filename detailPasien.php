@@ -3,7 +3,7 @@
     if(!empty($_POST["valPasien"])) 
     {
         $uidPasien=$_POST["valPasien"];
-        $sql ="SELECT * FROM tb_pasien WHERE kode_rfid=:valAsset";
+        $sql ="SELECT * FROM tb_pasien WHERE kode_rfid=:valPasien";
         $query= $dbh -> prepare($sql);
         $query-> bindParam(':valPasien', $uidPasien, PDO::PARAM_STR);
         $query-> execute();
@@ -37,6 +37,7 @@
         }
         else
         {
+            echo "<span style='color:red'> UID Tidak Terdaftar .</span>";
             echo "<script>$('#submit').prop('disabled',true);</script>";
         }
     }

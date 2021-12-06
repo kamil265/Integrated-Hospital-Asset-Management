@@ -23,6 +23,7 @@
         }
         else
         {
+            echo "<span style='color:red'> UID Tidak Terdaftar.</span>";
             echo "<script>$('#submit').prop('disabled',true);</script>";
         }
     }

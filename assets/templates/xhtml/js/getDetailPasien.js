@@ -1,13 +1,13 @@
 $('.dtl-pasien').on('click', function() {
-    var $valPj = $('#get_uidPasien').html();
+    var $valPasien = $('#get_uidPas').html();
     $.ajax({  
         url:"detailPasien.php",  
         method:"POST",  
-        data:{valPj:$valPj},  
+        data:{valPasien:$valPasien},  
         success:function(data)  
         {  
-             $('#showDetailPasien').fadeIn();  
-             $('#showDetailPasien').html(data);  
+             $('#showDetailPasien, #showDetailPasien2').fadeIn();  
+             $('#showDetailPasien, #showDetailPasien2').html(data);  
         }  
    });  
 });     

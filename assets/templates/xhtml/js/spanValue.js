@@ -61,13 +61,13 @@ function uidPj(){
 
 }
 
-function uidPasien(){
+function uidReservasiKamar(){
 
-    uid_pas = $('.valueUIDpasien').html();
+    uid_pasres = $('.valueUIDpasien').html();
 
-    $("#uid_pemindahanpasien").val(uid_pas);
+    $("#uid_reservasikamar").val(uid_pasres);
 
-    $("#formAddpindah").submit();
+    $("#formAddReservasi").submit();
 
 }
 

@@ -1,6 +1,5 @@
 <?php
 $title="Clinical Management - Pasien";
-include 'connect.php';
 ?>
 
 <div class="container-fluid">
@@ -114,10 +113,8 @@ include 'connect.php';
 				</div>
 			</div>
 		</div>
-    </div>
-    </div>
- 
-
+</div>
+</div>
 
 
 <!--**********************************
@@ -133,7 +130,7 @@ include 'connect.php';
                 </button>
             </div>
         <div class="modal-body">
-            <form action="addReservasiKamar.php" method="POST"  class="step-form-horizontal">
+            <form action="addReservasiKamar.php" method="POST" id="formAddReservasi" onsubmit="getReservasiKamar()" >
                 <div>                    
                     <section>
                         <div class="row">
@@ -141,13 +138,13 @@ include 'connect.php';
                                 <label class="text-label" >UID PASIEN</label>
                                     <div class="input-group mb-3">
                                         <div class="form-control">
-                                            <span class="valueUIDpasien" id="get_uidPasienRes">
+                                            <span class="valueUIDpasien" id="get_uidPas">
                                                 Tap Kartu Kemudian Tekan Scan                                        
                                             </span>
                                         </div>
                                         <input type="hidden" name="uid_reservasikamar" id="uid_reservasikamar" class="form-control" readonly required>
                                             <div class="input-group-append">
-                                                <button class="btn btn-primary TesButton" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID();" >Scan</button>
+                                                <button class="btn btn-primary" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID();" >Scan</button>
                                                 <button class="btn btn-success dtl-pasien" type="button" name="btnGetDetailPasien" id="getDetailPasien" >Detail</button>
                                             </div>
                                     </div>
@@ -300,7 +297,7 @@ include 'connect.php';
                                 <label class="text-label" >UID ASET</label>
                                     <div class="input-group mb-3">
                                         <div class="form-control">
-                                            <span class="valueUIDpasien" id="get_uidPasienPindah">
+                                            <span class="valueUIDpasien" id="get_uidPas">
                                                 Tap Kartu kemudian tekan tombol scan
                                             </span>
                                         </div>
@@ -310,7 +307,7 @@ include 'connect.php';
                                                 <button class="btn btn-success dtl-pasien" type="button" name="btnGetDetailPasien" id="getDetailPasien" >Detail</button>
                                             </div>
                                     </div>
-                                    <span id="showDetailPasien"></span>
+                                    <span id="showDetailPasien2"></span>
                                 <!-- <div class="form-group">
                                     <label class="text-label">UID Pasien</label>
                                     <input type="text" name="uid_pemindahanpasien" id="uid_pemindahanpasien" onblur="getPemindahanPasien()" class="form-control" required>

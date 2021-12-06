@@ -14,7 +14,7 @@
             foreach ($results as $result) {
                 ?>
                     <label>Nama Karyawan</label><br>
-                    <input type="text" class="form-control" value="<?php echo htmlentities($result->nama_karyawan);?>" required>  <br>  
+                    <input type="text" class="form-control" value="<?php echo htmlentities($result->nama_karyawan);?>" readonly required>  <br>  
                     <label>Divisi</label><br>
                     <input type="text" class="form-control" value="<?php echo htmlentities($result->divisi_karyawan);?> " readonly required>  <br>   
                     <hr>            

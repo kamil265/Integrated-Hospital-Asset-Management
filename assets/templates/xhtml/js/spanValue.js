@@ -60,3 +60,14 @@ function uidPj(){
     $("#formAddpj").submit();
 
 }
+
+function uidPasien(){
+
+    uid_pas = $('.valueUIDpasien').html();
+
+    $("#uid_pemindahanpasien").val(uid_pas);
+
+    $("#formAddpindah").submit();
+
+}
+

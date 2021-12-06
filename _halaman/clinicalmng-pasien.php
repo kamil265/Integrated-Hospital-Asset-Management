@@ -2,142 +2,9 @@
 $title="Clinical Management - Pasien";
 include 'connect.php';
 ?>
+
 <div class="container-fluid">
 <div class="row">
-<div class="modal fade" id="modal-reservasi" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Form Pemindahan Pasien</h5>
-                <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="addclinicalpasien.php" method="POST" class="step-form-horizontal">
-                    <div class="form-group">
-                        <div class="col-lg-15">
-                            <label> RFID UID </label>
-                            <Input type="text" name="clcpasrfid" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-lg-15">
-                            <label> TANGGAL MASUK </label>
-                            <Input type="text" name="clcpastanggal" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-lg-15">
-                    <div class="form-group">
-                        <label class="text-label"> NAMA PASIEN </label>
-                        <Input type="text" name="clcpasnama" class="form-control" required>
-                    </div>
-                    </div>
-                    <div class="col-lg-15">
-                        <div class="form-group">
-                            <label class="text-label">KATEGORI PASIEN</label>
-                            <select class="form-control" name="clcpaskategori">
-                            <option ><?php echo htmlentities($result->kategori_pasien);?></option>
-                                <option>Dewasa</option>
-                                <option>Anak</option>
-                                <option>Bayi</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-15">
-                    <div class="form-group">
-                        <label class="text-label"> DOKTER </label>
-                        <Input type="text" name="clcpasdokter" class="form-control">
-                    </div>
-                    </div>
-                    <div class="col-lg-15">
-                    <div class="form-group">
-                        <label class="text-label"> DIAGNOSA </label>
-                        <Input type="text" name="clcpasdiag" class="form-control">
-                    </div>
-                    </div>
-                    <div class="col-lg-15">
-                        <div class="form-group">
-                            <label class="text-label">STATUS</label>
-                            <select class="form-control" name="clcpasstatus">
-                            <option ><?php echo htmlentities($result->status_pasien);?></option>
-                                <option>Status 1</option>
-                                <option>Status 2</option>
-                                <option>Status 3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-15">
-                    <div class="form-group">
-                        <label class="text-label"> ASAL RUANG </label>
-                        <Input type="text" name="clcpasasal" class="form-control" required>
-                    </div>
-                    </div>
-                    <div class="col-lg-15">
-                    <div class="form-group">
-                        <label class="text-label"> RUANG PEMINDAHAN</label>
-                        <Input type="text" name="clcpastujuan" class="form-control" required>
-                    </div>
-                    </div>
-               
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
-                <button type="submit" name="insertclinicalpasien" class="btn btn-primary">Simpan</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="modal-reservasi" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Form Reservasi Kamar</h5>
-                <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="addclinicalkamar.php" method="post" class="step-form-horizontal">
-                    <div class="form-group">
-                    <div class="col-lg-15">
-                        <label class="text-label"> NAMA </label>
-                        <Input type="text" name="clckamnama" class="form-control" required>
-                    </div>
-                    </div>
-                    <div class="col-lg-15">
-                    <div class="form-group">
-                        <label class="text-label"> NIK </label>
-                        <Input type="text" name="clckamnik" class="form-control" required>
-                    </div>
-                    </div>
-                    <div class="col-lg-15">
-                    <div class="form-group">
-                        <label class="text-label"> NOMOR TELEPON </label>
-                        <Input type="text" name="clckamnotelp" class="form-control">
-                    </div>
-                    </div>
-                    <div class="col-lg-15">
-                    <div class="form-group">
-                        <label class="text-label"> ALAMAT </label>
-                        <Input type="text" name="clckamalamat" class="form-control" required>
-                    </div>
-                    </div>
-                    <div class="col-lg-15">
-                    <div class="form-group">
-                        <label class="text-label"> DIAGNOSA </label>
-                        <Input type="text" name="clckamdiagnosa" class="form-control">
-                    </div>  
-                    </div>
-               
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
-                <button type="submit" name="insertclinicalkamar" class="btn btn-primary">Simpan</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
 <div id="modalEditClinicalPasien" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div>
 	    <div class="col-xl-3 col-lg-6 col-sm-6">
@@ -257,10 +124,6 @@ include 'connect.php';
             Reservasi Kamar
     ***********************************-->
 
-
-<script src="<?=templates()?>js/tambah-reservasikamar.js"></script>
-
-
 <div class="modal fade modal-tambah-reservasikamar" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -275,13 +138,20 @@ include 'connect.php';
                     <section>
                         <div class="row">
                         	<div class="col-lg-12 mb-2">
-                                <div class="form-group">
-                                    <label class="text-label">UID Pasien</label>
-                                    <input type="text" name="uid_reservasikamar" id="uid_reservasikamar" onblur="getReservasiKamar()" class="form-control" required>
-                                </div>
-								<div class="form-group">
-                                    <span id="get_data_reservasikamar" style="font-size:16px;"></span> 
-                                </div>
+                                <label class="text-label" >UID PASIEN</label>
+                                    <div class="input-group mb-3">
+                                        <div class="form-control">
+                                            <span class="valueUIDpasien" id="get_uidPasienRes">
+                                                Tap Kartu Kemudian Tekan Scan                                        
+                                            </span>
+                                        </div>
+                                        <input type="hidden" name="uid_reservasikamar" id="uid_reservasikamar" class="form-control" readonly required>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary TesButton" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID();" >Scan</button>
+                                                <button class="btn btn-success dtl-pasien" type="button" name="btnGetDetailPasien" id="getDetailPasien" >Detail</button>
+                                            </div>
+                                    </div>
+                                    <span id="showDetailPasien"></span>
                             </div>
 							<div class="col-12">
 								<div class="form-group">
@@ -336,18 +206,6 @@ include 'connect.php';
             
         </div>
     </div>
-</div>
-<div id="modalEditJadwal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-</div>
-<div id="modalEditJadwalPerawat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-</div>
-<div id="modalEditJadwalKaryawan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-</div>
-<div id="modalEditDokter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-</div>
-<div id="modalEditPerawat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-</div>
-<div id="modalEditKaryawan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div>
 <div id="modalEditReservasiKamar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div>
@@ -434,12 +292,26 @@ include 'connect.php';
                 </button>
             </div>
         <div class="modal-body">
-            <form action="addPemindahanPasien.php" method="POST"  class="step-form-horizontal">
+            <form action="addPemindahanPasien.php" method="POST" id="formAddpindah" onsubmit="uidPindah()">
                 <div>                    
                     <section>
                         <div class="row">
                         	<div class="col-lg-12 mb-2">
-                                <div class="form-group">
+                                <label class="text-label" >UID ASET</label>
+                                    <div class="input-group mb-3">
+                                        <div class="form-control">
+                                            <span class="valueUIDpasien" id="get_uidPasienPindah">
+                                                Tap Kartu kemudian tekan tombol scan
+                                            </span>
+                                        </div>
+                                        <input type="hidden" name="uid_pemindahanpasien" id="uid_pemindahanpasien" class="form-control" required>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button" name="btnGetUid" id="btnGetUid" onclick="getUID()" >Scan</button>
+                                                <button class="btn btn-success dtl-pasien" type="button" name="btnGetDetailPasien" id="getDetailPasien" >Detail</button>
+                                            </div>
+                                    </div>
+                                    <span id="showDetailPasien"></span>
+                                <!-- <div class="form-group">
                                     <label class="text-label">UID Pasien</label>
                                     <input type="text" name="uid_pemindahanpasien" id="uid_pemindahanpasien" onblur="getPemindahanPasien()" class="form-control" required>
                                 </div>
@@ -449,7 +321,7 @@ include 'connect.php';
                                 <div id="resultPemindahanPasien"></div>
                                 <div class="form-group">
                                     <span id="get_data_pemindahanpasien"></span> 
-                                </div>
+                                </div> -->
                             </div>
                             <div class="col-lg-12 mb-3">
                                 <div class="form-group">
@@ -477,18 +349,7 @@ include 'connect.php';
     </div>
 </div>
 
-<div id="modalEditJadwal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-</div>
-<div id="modalEditJadwalPerawat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-</div>
-<div id="modalEditJadwalKaryawan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-</div>
-<div id="modalEditDokter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-</div>
-<div id="modalEditPerawat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-</div>
-<div id="modalEditKaryawan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-</div>
+
 <div id="modalEditReservasiKamar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div>
 <div id="modalEditPemindahanPasien" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -559,6 +420,7 @@ include 'connect.php';
         </div>    
     </div>
 </div>
+
 
 
 

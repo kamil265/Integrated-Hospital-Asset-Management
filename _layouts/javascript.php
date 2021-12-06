@@ -96,6 +96,8 @@
     <script src="<?=templates()?>js/uidAddAsset.js"></script>
     <script src="<?=templates()?>js/getDetailPj.js"></script>
     <script src="<?=templates()?>js/getDetailAsset.js"></script>
+    <script src="<?=templates()?>js/getDetailPasien.js"></script>
+
 
 
 

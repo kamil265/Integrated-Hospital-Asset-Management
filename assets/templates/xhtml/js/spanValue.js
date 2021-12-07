@@ -38,14 +38,6 @@ function uidAset(){
 
     $("#formAddAset").submit();
 }
-function uidPemindahanPasien(){
-
-    uid_pemindahanpasien = $('.valueUIDpemindahanpasien').html();
-
-    $("#uid_pemindahanpasien").val(uid_pemindahanpasien);
-
-    $("#formAddPemindahanPasien").submit();
-}
 
 function uidPj(){
 
@@ -63,11 +55,22 @@ function uidPj(){
 
 function uidReservasiKamar(){
 
-    uid_pasres = $('.valueUIDpasien').html();
+    uid_pasres = $('.valueUIDResKamar').html();
 
     $("#uid_reservasikamar").val(uid_pasres);
 
     $("#formAddReservasi").submit();
 
 }
+
+function uidPemindahanPasien(){
+
+    uid_pinpas = $('.valueUIDpindahpasien').html();
+
+    $("#uid_pemindahanpasien").val(uid_pinpas);
+
+    $("#formAddPindah").submit();
+
+}
+
 

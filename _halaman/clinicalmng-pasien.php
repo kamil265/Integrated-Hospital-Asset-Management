@@ -130,7 +130,7 @@ $title="Clinical Management - Pasien";
                 </button>
             </div>
         <div class="modal-body">
-            <form action="addReservasiKamar.php" method="POST" id="formAddReservasi" onsubmit="getReservasiKamar()" >
+            <form action="addReservasiKamar.php" method="POST" id="formAddReservasi" onsubmit="uidReservasiKamar()" >
                 <div>                    
                     <section>
                         <div class="row">
@@ -138,7 +138,7 @@ $title="Clinical Management - Pasien";
                                 <label class="text-label" >UID PASIEN</label>
                                     <div class="input-group mb-3">
                                         <div class="form-control">
-                                            <span class="valueUIDpasien" id="get_uidPas">
+                                            <span class="valueUIDResKamar" id="get_uidPas">
                                                 Tap Kartu Kemudian Tekan Scan                                        
                                             </span>
                                         </div>
@@ -277,9 +277,6 @@ $title="Clinical Management - Pasien";
             Pemindahan Pasien
     ***********************************-->
 
-<script src="<?=templates()?>js/tambah-pemindahanpasien.js"></script>
-
-
 <div class="modal fade modal-tambah-pemindahanpasien" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -289,7 +286,7 @@ $title="Clinical Management - Pasien";
                 </button>
             </div>
         <div class="modal-body">
-            <form action="addPemindahanPasien.php" method="POST" id="formAddpindah" onsubmit="uidPindah()">
+            <form action="addPemindahanPasien.php" method="POST" id="formAddPindah" onsubmit="uidPemindahanPasien()">
                 <div>                    
                     <section>
                         <div class="row">
@@ -297,7 +294,7 @@ $title="Clinical Management - Pasien";
                                 <label class="text-label" >UID ASET</label>
                                     <div class="input-group mb-3">
                                         <div class="form-control">
-                                            <span class="valueUIDpasien" id="get_uidPas">
+                                            <span class="valueUIDpindahpasien" id="get_uidPas">
                                                 Tap Kartu kemudian tekan tombol scan
                                             </span>
                                         </div>
